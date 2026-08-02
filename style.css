@@ -1,0 +1,199 @@
+:root {
+    --bg-color: #0a0b0e;
+    --card-bg: rgba(20, 20, 25, 0.75); 
+    --primary-gold: #d4af37;
+    --gold-hover: #e6bf4b;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --glass-border: 1px solid rgba(255, 255, 255, 0.12);
+    --font-main: 'Poppins', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--font-main);
+    background: radial-gradient(circle at top center, #1a1c24 0%, #050608 100%);
+    color: var(--text-main);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: var(--glass-border);
+    margin-bottom: 30px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo {
+    height: 50px;
+    border-radius: 50%; /* Por si la imagen es cuadrada, la hace circular */
+}
+
+.brand-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-gold);
+}
+.brand-name .lite { font-weight: 300; color: #fff; }
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ENLACE WALLET */
+.ecosystem-link {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+.ecosystem-link:hover {
+    color: var(--primary-gold);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.btn-connect {
+    background: transparent;
+    border: 2px solid var(--primary-gold);
+    color: var(--primary-gold);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-connect:hover {
+    background: var(--primary-gold);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+/* CARD DE LIQUIDEZ */
+.liquidity-section {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.glass-effect {
+    background: var(--card-bg);
+    backdrop-filter: blur(25px);
+    border: var(--glass-border);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.liquidity-card {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 30px;
+    padding: 35px;
+}
+
+.card-header { text-align: center; margin-bottom: 25px; }
+.card-header h2 {
+    font-size: 1.8rem;
+    background: linear-gradient(45deg, #fff, var(--primary-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.card-header p { color: var(--text-muted); font-size: 0.9rem; }
+
+.input-group { margin-bottom: 15px; }
+.input-group label { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block; }
+
+.token-selector {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.token-selector.selected { border-color: rgba(212, 175, 55, 0.4); }
+
+.token-selector img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.token-selector input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: right;
+    flex-grow: 1;
+    outline: none;
+    width: 100%;
+}
+
+.token-symbol { font-size: 1.1rem; font-weight: 600; color: var(--primary-gold); }
+.divider-icon { text-align: center; color: var(--text-muted); margin: 5px 0; }
+.balance-text { display: block; text-align: right; color: var(--text-muted); font-size: 0.75rem; margin-top: 5px; }
+
+.action-buttons { display: flex; gap: 15px; margin-top: 25px; }
+.btn-action {
+    flex: 1; padding: 15px; border: none; border-radius: 12px;
+    font-weight: 600; font-size: 1rem; cursor: pointer; transition: 0.3s;
+}
+.btn-action.approve { background: #333; color: #fff; border: 1px solid #555; }
+.btn-action.approve:hover { background: #444; }
+
+.btn-action.supply { background: linear-gradient(45deg, var(--primary-gold), var(--gold-hover)); color: #000; }
+.btn-action.supply:hover { box-shadow: 0 4px 15px rgba(212,175,55,0.5); transform: translateY(-2px); }
+
+.lp-info-box { text-align: center; margin-top: 15px; }
+.text-glow { color: var(--primary-gold); font-weight: bold; }
+
+/* BANNER PROMOCIONAL ECOSISTEMA */
+.promo-container {
+    margin-top: 30px;
+    text-align: center;
+}
+.promo-banner {
+    width: 100%;
+    border-radius: 15px;
+    border: var(--glass-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0.9;
+}
+.promo-banner:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+    opacity: 1;
+}
+
+footer { text-align: center; margin-top: 20px; color: #555; font-size: 0.8rem; }
+
+@media (max-width: 600px) {
+    header { flex-direction: column; gap: 15px; }
+    .liquidity-card { padding: 20px; }
+}
