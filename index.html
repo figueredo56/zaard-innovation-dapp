@@ -18,20 +18,14 @@
 <body>
 
     <div class="main-wrapper">
-        <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
+        <!-- BARRA DE NAVEGACIÓN SUPERIOR (Limpia y profesional, sin enlaces duplicados) -->
         <header>
             <div class="logo-container">
                 <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/CC_20260527_151822.png" alt="ZARD Finance" class="nav-logo">
                 <span class="brand-name">ZARD<span class="lite">FINANCE</span></span>
             </div>
-            
-            <nav class="nav-links">
-                <a href="https://figueredo56.github.io/zaard-official/" target="_blank" class="nav-tag" data-i18n="nav-web">🌐 Web Oficial</a>
-                <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="nav-tag" data-i18n="nav-wallet">👛 ZARD Wallet</a>
-                <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank" class="nav-tag" data-i18n="nav-eco">🚀 Ecosistema</a>
-            </nav>
 
-            <div class="header-right" style="display: flex; align-items: center; gap: 10px;">
+            <div class="header-right">
                 <select id="languageSelect" onchange="changeLanguage(this.value)" class="lang-selector">
                     <option value="es">🇪🇸 ES</option>
                     <option value="en">🇬🇧 EN</option>
@@ -54,28 +48,44 @@
                 </div>
 
                 <div class="hub-cards-grid">
+                    <!-- TARJETA WALLET CON IMAGEN DEL LOGO OFICIAL -->
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-wallet/wallet.html', '_blank')">
-                        <div class="card-icon">👛</div>
+                        <div class="card-img-square">
+                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/CC_20260527_151822.png" alt="ZARD Wallet" class="card-custom-img">
+                        </div>
                         <h3 data-i18n="card1-title">ZARD Wallet</h3>
                         <p data-i18n="card1-desc">Gestiona tus activos y tokens de forma segura dentro de la red.</p>
                         <span class="card-link-text" data-i18n="card1-link">Abrir Billetera &rarr;</span>
                     </div>
 
-                    <!-- TARJETA CON CONTENEDOR MÁS GRANDE Y CUADRADO -->
+                    <!-- TARJETA CREAR TOKEN CON LA NUEVA IMAGEN Y CONTENEDOR AJUSTADO -->
                     <div class="hub-card featured" onclick="switchTab('creator')">
                         <div class="card-img-square">
-                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/214%20sin%20titulo_20260802110910.png" alt="Crear Token & Liquidez" class="card-custom-img">
+                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/202%20sin%20t%C3%ADtulo_20260728095615.png" alt="Crear Token & Liquidez" class="card-custom-img">
                         </div>
                         <h3 data-i18n="card2-title">Crear Token & Liquidez</h3>
                         <p data-i18n="card2-desc" style="font-size: 0.78rem; margin-bottom: 15px;">Despliega tu propia moneda emparejada directamente con ZARD.</p>
                         <span class="card-link-text" data-i18n="card2-link">Iniciar Creación &rarr;</span>
                     </div>
 
+                    <!-- TARJETA ECOSISTEMA -->
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/index.html/?img=zaard', '_blank')">
-                        <div class="card-icon">🌐</div>
+                        <div class="card-img-square" style="border-color: var(--neon-green);">
+                            <img src="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png" alt="ZARD Ecosistema" class="card-custom-img">
+                        </div>
                         <h3 data-i18n="card3-title">ZARD Ecosistema</h3>
                         <p data-i18n="card3-desc">Explora las alertas, proyectos oficiales y plataformas globales.</p>
                         <span class="card-link-text" data-i18n="card3-link">Explorar Web &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN DE ENLACES DEL ECOSISTEMA INFERIOR (Organizados y profesionales) -->
+                <div class="ecosystem-footer-links">
+                    <h4 data-i18n="eco-links-title">🔗 Enlaces Rápidos del Ecosistema</h4>
+                    <div class="footer-links-grid">
+                        <a href="https://figueredo56.github.io/zaard-official/" target="_blank" class="eco-link-btn" data-i18n="nav-web">🌐 Web Oficial</a>
+                        <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="eco-link-btn" data-i18n="nav-wallet">👛 ZARD Wallet</a>
+                        <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank" class="eco-link-btn" data-i18n="nav-eco">🚀 Ecosistema Global</a>
                     </div>
                 </div>
             </section>
@@ -129,7 +139,6 @@
                         <p data-i18n="lp-subtitle">Requiere tener ZARD en tu billetera Binance Web3 / MetaMask</p>
                     </div>
 
-                    <!-- LOGO CORREGIDO CON URL DIRECTA -->
                     <div class="input-group">
                         <div class="token-selector selected">
                             <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/CC_20260527_151822.png" alt="ZARD Logo">
@@ -162,7 +171,7 @@
             es: {
                 "nav-web": "🌐 Web Oficial",
                 "nav-wallet": "👛 ZARD Wallet",
-                "nav-eco": "🚀 Ecosistema",
+                "nav-eco": "🚀 Ecosistema Global",
                 "btn-connect": "Conectar Billetera",
                 "hero-title": "Bienvenido al Núcleo de ZARD Finance",
                 "hero-subtitle": "Selecciona una opción del ecosistema para comenzar la innovación financiera",
@@ -175,6 +184,7 @@
                 "card3-title": "ZARD Ecosistema",
                 "card3-desc": "Explora las alertas, proyectos oficiales y plataformas globales.",
                 "card3-link": "Explorar Web →",
+                "eco-links-title": "🔗 Enlaces Rápidos del Ecosistema",
                 "creator-title": "Centro de Creación ZARD Finance",
                 "creator-subtitle": "Diseña tu token con par directo en ZARD y despliegue automatizado",
                 "label-name": "Nombre y Símbolo del Token",
@@ -194,7 +204,7 @@
             en: {
                 "nav-web": "🌐 Official Web",
                 "nav-wallet": "👛 ZARD Wallet",
-                "nav-eco": "🚀 Ecosystem",
+                "nav-eco": "🚀 Global Ecosystem",
                 "btn-connect": "Connect Wallet",
                 "hero-title": "Welcome to ZARD Finance Core",
                 "hero-subtitle": "Select an ecosystem option to start financial innovation",
@@ -207,6 +217,7 @@
                 "card3-title": "ZARD Ecosystem",
                 "card3-desc": "Explore alerts, official projects, and global platforms.",
                 "card3-link": "Explore Web →",
+                "eco-links-title": "🔗 Ecosystem Quick Links",
                 "creator-title": "ZARD Finance Creation Center",
                 "creator-subtitle": "Design your token with direct ZARD pair and automated deployment",
                 "label-name": "Token Name & Symbol",
@@ -226,7 +237,7 @@
             zh: {
                 "nav-web": "🌐 官方网站",
                 "nav-wallet": "👛 ZARD 钱包",
-                "nav-eco": "🚀 生态系统",
+                "nav-eco": "🚀 全球生态系统",
                 "btn-connect": "连接钱包",
                 "hero-title": "欢迎来到 ZARD Finance 核心",
                 "hero-subtitle": "选择生态系统选项以开启金融创新",
@@ -239,6 +250,7 @@
                 "card3-title": "ZARD 生态系统",
                 "card3-desc": "探索警报、官方项目和全球平台。",
                 "card3-link": "探索网页 →",
+                "eco-links-title": "🔗 生态系统快速链接",
                 "creator-title": "ZARD Finance 创建中心",
                 "creator-subtitle": "设计带有 ZARD 直接交易对和自动部署功能的代币",
                 "label-name": "代币名称与符号",
