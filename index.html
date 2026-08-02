@@ -5,18 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">ZARD Finance | Ecosistema Descentralizado</title>
     
-    <!-- METADATOS DE VISTA PREVIA (WhatsApp, Telegram, X, Discord) -->
+    <!-- METADATOS DE VISTA PREVIA -->
     <meta property="og:title" content="ZARD Finance | Ecosistema Descentralizado">
     <meta property="og:description" content="Crea tu propio token emparejado con ZARD, gestiona tu billetera y explora el ecosistema financiero global.">
     <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png">
     <meta property="og:url" content="https://figueredo56.github.io/zaard-innovation-dapp/">
     <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ZARD Finance | Ecosistema Descentralizado">
-    <meta name="twitter:description" content="Crea tu propio token emparejado con ZARD, gestiona tu billetera y explora el ecosistema financiero global.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png">
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -38,7 +32,6 @@
             </nav>
 
             <div class="header-right" style="display: flex; align-items: center; gap: 10px;">
-                <!-- SELECTOR DE IDIOMAS -->
                 <select id="languageSelect" onchange="changeLanguage(this.value)" class="lang-selector">
                     <option value="es">🇪🇸 ES</option>
                     <option value="en">🇬🇧 EN</option>
@@ -49,7 +42,7 @@
             </div>
         </header>
 
-        <!-- CONTENEDOR DE PESTAÑAS (TABS) -->
+        <!-- CONTENEDOR DE PESTAÑAS -->
         <main class="content-container">
 
             <!-- VISTA 1: HOME / BIENVENIDA -->
@@ -68,12 +61,12 @@
                         <span class="card-link-text" data-i18n="card1-link">Abrir Billetera &rarr;</span>
                     </div>
 
-                    <!-- TARJETA ACTUALIZADA CON LA IMAGEN Y ESTRUCTURA SOLICITADA -->
+                    <!-- TARJETA CON CONTENEDOR CUADRADO Y URL LIMPIA -->
                     <div class="hub-card featured" onclick="switchTab('creator')">
-                        <div class="card-img-container">
-                            <img src="https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/214%20sin%20t%C3%tulo_20260802110910.png" alt="Crear Token & Liquidez" class="card-custom-img">
+                        <div class="card-img-square">
+                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/214%20sin%20titulo_20260802110910.png" alt="Crear Token & Liquidez" class="card-custom-img">
                         </div>
-                        <h3 data-i18n="card2-title" style="margin-top: 10px;">Crear Token & Liquidez</h3>
+                        <h3 data-i18n="card2-title">Crear Token & Liquidez</h3>
                         <p data-i18n="card2-desc" style="font-size: 0.78rem; margin-bottom: 15px;">Despliega tu propia moneda emparejada directamente con ZARD.</p>
                         <span class="card-link-text" data-i18n="card2-link">Iniciar Creación &rarr;</span>
                     </div>
@@ -86,7 +79,6 @@
                     </div>
                 </div>
             </section>
-
 
             <!-- VISTA 2: CREADOR DE TOKENS Y LIQUIDEZ -->
             <section id="tab-creator" class="view-section">
@@ -137,9 +129,10 @@
                         <p data-i18n="lp-subtitle">Requiere tener ZARD en tu billetera Binance Web3 / MetaMask</p>
                     </div>
 
+                    <!-- LOGO REPARADO CON URL LIMPIA -->
                     <div class="input-group">
                         <div class="token-selector selected">
-                            <img src="https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/214%20sin%20t%C3%tulo_20260802110910.png" alt="ZARD Logo">
+                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/214%20sin%20titulo_20260802110910.png" alt="ZARD Logo">
                             <input type="number" id="zardLiquidityAmount" placeholder="0.0">
                             <span class="token-symbol">ZARD</span>
                         </div>
@@ -164,7 +157,6 @@
         </footer>
     </div>
 
-    <!-- SCRIPT DE TRADUCCIÓN Y NAVEGACIÓN -->
     <script>
         const translations = {
             es: {
@@ -197,7 +189,7 @@
                 "btn-deploy": "🚀 Desplegar y Crear Liquidez",
                 "status-label": "Estado:",
                 "status-ready": "Listo para configurar...",
-                "footer-text": "© 2026 ZARD Finance Ecosystem. Despliegue sincronizado com Web3 BSC."
+                "footer-text": "© 2026 ZARD Finance Ecosystem. Despliegue sincronizado con Web3 BSC."
             },
             en: {
                 "nav-web": "🌐 Official Web",
@@ -279,7 +271,6 @@
             localStorage.setItem('zard_lang', lang);
         }
 
-        // Cargar idioma guardado o predeterminado
         window.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('zard_lang') || 'es';
             document.getElementById('languageSelect').value = savedLang;
