@@ -1,6 +1,6 @@
 :root {
     --bg-color: #050608;
-    --card-bg: rgba(18, 16, 28, 0.95); 
+    --card-bg: rgba(18, 16, 32, 0.95); 
     --primary-purple: #b042ff;
     --purple-glow: rgba(176, 66, 255, 0.5);
     --neon-green: #00e676;
@@ -13,9 +13,10 @@
 
 body {
     font-family: var(--font-main);
-    background: radial-gradient(circle at top center, #1b1236 0%, #050608 100%);
+    background: radial-gradient(circle at top center, #2e1065 0%, #0f172a 50%, #050608 100%);
     color: var(--text-main);
     min-height: 100vh;
+    touch-action: manipulation;
 }
 
 .main-wrapper {
@@ -27,7 +28,7 @@ body {
     margin: 0 auto;
 }
 
-/* HEADER SUPERIOR LIMPIO */
+/* HEADER SUPERIOR */
 header {
     display: flex;
     justify-content: space-between;
@@ -79,7 +80,7 @@ header {
 .view-section { display: none; animation: fadeIn 0.4s ease-in-out; }
 .view-section.active { display: block; }
 
-/* HOME HERO Y TARJETAS */
+/* HOME HERO Y TARJETAS UNIFORMES Y MÁS GRANDES */
 .welcome-hero { text-align: center; margin-bottom: 30px; }
 .hero-banner {
     width: 100%;
@@ -95,41 +96,37 @@ header {
 
 .hub-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
     margin-bottom: 30px;
 }
 
+/* TARJETAS AMPLIADAS CON FONDO MORADO/AZUL DEGRADADO PROFESIONAL */
 .hub-card {
-    background: var(--card-bg);
-    border: 2px dashed rgba(176, 66, 255, 0.6);
-    border-radius: 20px;
-    padding: 25px;
+    background: linear-gradient(135deg, rgba(20, 16, 40, 0.95), rgba(30, 41, 59, 0.9));
+    border: 2px solid var(--primary-purple);
+    border-radius: 25px;
+    padding: 30px 20px;
     text-align: center;
     cursor: pointer;
     transition: 0.3s ease;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.25);
 }
 .hub-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     border-color: var(--neon-green);
-    box-shadow: 0 8px 25px rgba(0, 230, 118, 0.3);
-}
-.hub-card.featured {
-    background: linear-gradient(135deg, rgba(18,16,28,0.95), rgba(60,20,100,0.6));
-    border: 2px solid var(--primary-purple);
-    box-shadow: 0 0 20px rgba(176, 66, 255, 0.3);
+    box-shadow: 0 12px 35px rgba(0, 230, 118, 0.35);
 }
 
-/* CONTENEDOR CUADRADO DE IMÁGENES */
+/* CONTENEDOR DE IMÁGENES UNIFICADO Y MÁS GRANDE */
 .card-img-square {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 15px auto;
-    border-radius: 20px;
+    width: 170px;
+    height: 170px;
+    margin: 0 auto 20px auto;
+    border-radius: 22px;
     overflow: hidden;
     border: 2px solid var(--primary-purple);
-    box-shadow: 0 0 18px var(--purple-glow);
+    box-shadow: 0 0 20px var(--purple-glow);
     background: rgba(0,0,0,0.5);
     display: flex;
     align-items: center;
@@ -138,18 +135,18 @@ header {
 .card-custom-img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 .hub-card:hover .card-custom-img {
-    transform: scale(1.06);
+    transform: scale(1.05);
 }
 
-.hub-card h3 { font-size: 1.2rem; color: #fff; margin-bottom: 8px; }
-.hub-card p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px; }
-.card-link-text { font-size: 0.85rem; color: var(--neon-green); font-weight: 600; }
+.hub-card h3 { font-size: 1.3rem; color: #fff; margin-bottom: 10px; }
+.hub-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.4; }
+.card-link-text { font-size: 0.9rem; color: var(--neon-green); font-weight: 700; }
 
-/* SECCIÓN DE ENLACES INFERIORES DEL ECOSISTEMA */
+/* ENLACES RÁPIDOS INFERIORES */
 .ecosystem-footer-links {
     background: var(--card-bg);
     border: 1.5px solid rgba(176, 66, 255, 0.4);
