@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZARD Finance | Ecosistema Descentralizado</title>
+    <title id="page-title">ZARD Finance | Ecosistema Descentralizado</title>
     
     <!-- METADATOS DE VISTA PREVIA (WhatsApp, Telegram, X, Discord) -->
-    <meta property="Campaña" content="ZARD Finance - Centro de Creación y Liquidez Descentralizada">
     <meta property="og:title" content="ZARD Finance | Ecosistema Descentralizado">
     <meta property="og:description" content="Crea tu propio token emparejado con ZARD, gestiona tu billetera y explora el ecosistema financiero global.">
     <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png">
@@ -33,13 +32,20 @@
             </div>
             
             <nav class="nav-links">
-                <a href="https://figueredo56.github.io/zaard-official/" target="_blank" class="nav-tag">🌐 Web Oficial</a>
-                <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="nav-tag">👛 ZARD Wallet</a>
-                <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank" class="nav-tag">🚀 Ecosistema</a>
+                <a href="https://figueredo56.github.io/zaard-official/" target="_blank" class="nav-tag" data-i18n="nav-web">🌐 Web Oficial</a>
+                <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="nav-tag" data-i18n="nav-wallet">👛 ZARD Wallet</a>
+                <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank" class="nav-tag" data-i18n="nav-eco">🚀 Ecosistema</a>
             </nav>
 
-            <div class="header-right">
-                <button id="connectWalletBtn" class="btn-connect">Conectar Billetera</button>
+            <div class="header-right" style="display: flex; align-items: center; gap: 10px;">
+                <!-- SELECTOR DE IDIOMAS -->
+                <select id="languageSelect" onchange="changeLanguage(this.value)" class="lang-selector">
+                    <option value="es">🇪🇸 ES</option>
+                    <option value="en">🇬🇧 EN</option>
+                    <option value="zh">🇨🇳 中文</option>
+                </select>
+
+                <button id="connectWalletBtn" class="btn-connect" data-i18n="btn-connect">Conectar Billetera</button>
             </div>
         </header>
 
@@ -50,30 +56,33 @@
             <section id="tab-home" class="view-section active">
                 <div class="welcome-hero">
                     <img src="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png" alt="ZARD Finance Banner" class="hero-banner">
-                    <h1>Bienvenido al Núcleo de ZARD Finance</h1>
-                    <p>Selecciona una opción del ecosistema para comenzar la innovación financiera</p>
+                    <h1 data-i18n="hero-title">Bienvenido al Núcleo de ZARD Finance</h1>
+                    <p data-i18n="hero-subtitle">Selecciona una opción del ecosistema para comenzar la innovación financiera</p>
                 </div>
 
                 <div class="hub-cards-grid">
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-wallet/wallet.html', '_blank')">
                         <div class="card-icon">👛</div>
-                        <h3>ZARD Wallet</h3>
-                        <p>Gestiona tus activos y tokens de forma segura dentro de la red.</p>
-                        <span class="card-link-text">Abrir Billetera &rarr;</span>
+                        <h3 data-i18n="card1-title">ZARD Wallet</h3>
+                        <p data-i18n="card1-desc">Gestiona tus activos y tokens de forma segura dentro de la red.</p>
+                        <span class="card-link-text" data-i18n="card1-link">Abrir Billetera &rarr;</span>
                     </div>
 
+                    <!-- TARJETA ACTUALIZADA CON LA IMAGEN Y ESTRUCTURA SOLICITADA -->
                     <div class="hub-card featured" onclick="switchTab('creator')">
-                        <div class="card-icon">✨</div>
-                        <h3>Crear Token & Liquidez</h3>
-                        <p>Despliega tu propia moneda emparejada directamente con ZARD.</p>
-                        <span class="card-link-text">Iniciar Creador &rarr;</span>
+                        <div class="card-img-container">
+                            <img src="https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/214%20sin%20t%C3%tulo_20260802110910.png" alt="Crear Token & Liquidez" class="card-custom-img">
+                        </div>
+                        <h3 data-i18n="card2-title" style="margin-top: 10px;">Crear Token & Liquidez</h3>
+                        <p data-i18n="card2-desc" style="font-size: 0.78rem; margin-bottom: 15px;">Despliega tu propia moneda emparejada directamente con ZARD.</p>
+                        <span class="card-link-text" data-i18n="card2-link">Iniciar Creación &rarr;</span>
                     </div>
 
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/index.html/?img=zaard', '_blank')">
                         <div class="card-icon">🌐</div>
-                        <h3>ZARD Ecosistema</h3>
-                        <p>Explora las alertas, proyectos oficiales y plataformas globales.</p>
-                        <span class="card-link-text">Explorar Web &rarr;</span>
+                        <h3 data-i18n="card3-title">ZARD Ecosistema</h3>
+                        <p data-i18n="card3-desc">Explora las alertas, proyectos oficiales y plataformas globales.</p>
+                        <span class="card-link-text" data-i18n="card3-link">Explorar Web &rarr;</span>
                     </div>
                 </div>
             </section>
@@ -83,38 +92,36 @@
             <section id="tab-creator" class="view-section">
                 <div class="creator-header-banner">
                     <img src="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png" alt="Creator Banner" class="top-creator-img">
-                    <h2>Centro de Creación ZARD Finance</h2>
-                    <p>Diseña tu token con par directo en ZARD y despliegue automatizado</p>
+                    <h2 data-i18n="creator-title">Centro de Creación ZARD Finance</h2>
+                    <p data-i18n="creator-subtitle">Diseña tu token con par directo en ZARD y despliegue automatizado</p>
                 </div>
 
                 <div class="liquidity-card glass-effect">
                     
                     <div class="input-group">
-                        <label>Nombre y Símbolo del Token</label>
+                        <label data-i18n="label-name">Nombre y Símbolo del Token</label>
                         <div class="dual-inputs">
                             <input type="text" id="tokenName" placeholder="Ej: Zard Finance Coin" class="text-input">
                             <input type="text" id="tokenSymbol" placeholder="Ej: ZFC" class="text-input short">
                         </div>
                     </div>
 
-                    <!-- URL del Logo + Aviso fino en verde -->
                     <div class="input-group">
-                        <label>URL del Logo (Imagen del Token)</label>
+                        <label data-i18n="label-logo">URL del Logo (Imagen del Token)</label>
                         <input type="text" id="tokenLogoUrl" placeholder="https://gateway.pinata.cloud/ipfs/tu_hash_imagen" class="text-input">
                         
-                        <div class="tip-box-green">
+                        <div class="tip-box-green" data-i18n="tip-logo">
                             💡 <strong>Consejo Pro:</strong> Sube la imagen de tu token a una plataforma IPFS como <a href="https://www.pinata.cloud" target="_blank">Pinata.cloud</a>, copia el enlace directo resultante y pégalo aquí para que tu logo luzca oficial en la blockchain.
                         </div>
                     </div>
 
                     <div class="input-group">
-                        <label>Información / Redes (Web, X, Discord)</label>
+                        <label data-i18n="label-social">Información / Redes (Web, X, Discord)</label>
                         <input type="text" id="projectInfoUrl" placeholder="https://tupaginaweb.com | @TuX | Discord" class="text-input">
                     </div>
 
-                    <!-- Selector de Supply Rápido (1B, 1M, 1K) -->
                     <div class="input-group">
-                        <label>Suministro Total (Supply)</label>
+                        <label data-i18n="label-supply">Suministro Total (Supply)</label>
                         <div class="supply-buttons">
                             <button type="button" class="supply-btn" onclick="setSupply(1000)">1K</button>
                             <button type="button" class="supply-btn" onclick="setSupply(1000000)">1M</button>
@@ -126,27 +133,26 @@
                     <hr class="section-divider">
 
                     <div class="card-header-sub">
-                        <h3>Aporte de Liquidez Base ZARD</h3>
-                        <p>Requiere tener ZARD en tu billetera Binance Web3 / MetaMask</p>
+                        <h3 data-i18n="lp-title">Aporte de Liquidez Base ZARD</h3>
+                        <p data-i18n="lp-subtitle">Requiere tener ZARD en tu billetera Binance Web3 / MetaMask</p>
                     </div>
 
-                    <!-- SECCIÓN ZARD CON LA NUEVA IMAGEN -->
                     <div class="input-group">
                         <div class="token-selector selected">
                             <img src="https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/214%20sin%20t%C3%tulo_20260802110910.png" alt="ZARD Logo">
                             <input type="number" id="zardLiquidityAmount" placeholder="0.0">
                             <span class="token-symbol">ZARD</span>
                         </div>
-                        <small class="balance-text">Balance ZARD disponible: <span id="zardBalance">0.00</span></small>
+                        <small class="balance-text"><span data-i18n="balance-label">Balance ZARD disponible:</span> <span id="zardBalance">0.00</span></small>
                     </div>
 
                     <div class="action-buttons">
-                        <button id="backHomeBtn" class="btn-action secondary" onclick="switchTab('home')">⬅ Volver</button>
-                        <button id="deployAndSupplyBtn" class="btn-action supply">🚀 Desplegar y Crear Liquidez</button>
+                        <button id="backHomeBtn" class="btn-action secondary" onclick="switchTab('home')" data-i18n="btn-back">⬅ Volver</button>
+                        <button id="deployAndSupplyBtn" class="btn-action supply" data-i18n="btn-deploy">🚀 Desplegar y Crear Liquidez</button>
                     </div>
                     
                     <div class="lp-info-box">
-                        <small>Estado: <span id="statusText" class="text-glow">Listo para configurar...</span></small>
+                        <small><span data-i18n="status-label">Estado:</span> <span id="statusText" class="text-glow" data-i18n="status-ready">Listo para configurar...</span></small>
                     </div>
                 </div>
             </section>
@@ -154,11 +160,132 @@
         </main>
 
         <footer>
-            <p>© 2026 ZARD Finance Ecosystem. Despliegue sincronizado con Web3 BSC.</p>
+            <p data-i18n="footer-text">© 2026 ZARD Finance Ecosystem. Despliegue sincronizado con Web3 BSC.</p>
         </footer>
     </div>
 
+    <!-- SCRIPT DE TRADUCCIÓN Y NAVEGACIÓN -->
     <script>
+        const translations = {
+            es: {
+                "nav-web": "🌐 Web Oficial",
+                "nav-wallet": "👛 ZARD Wallet",
+                "nav-eco": "🚀 Ecosistema",
+                "btn-connect": "Conectar Billetera",
+                "hero-title": "Bienvenido al Núcleo de ZARD Finance",
+                "hero-subtitle": "Selecciona una opción del ecosistema para comenzar la innovación financiera",
+                "card1-title": "ZARD Wallet",
+                "card1-desc": "Gestiona tus activos y tokens de forma segura dentro de la red.",
+                "card1-link": "Abrir Billetera →",
+                "card2-title": "Crear Token & Liquidez",
+                "card2-desc": "Despliega tu propia moneda emparejada directamente con ZARD.",
+                "card2-link": "Iniciar Creación →",
+                "card3-title": "ZARD Ecosistema",
+                "card3-desc": "Explora las alertas, proyectos oficiales y plataformas globales.",
+                "card3-link": "Explorar Web →",
+                "creator-title": "Centro de Creación ZARD Finance",
+                "creator-subtitle": "Diseña tu token con par directo en ZARD y despliegue automatizado",
+                "label-name": "Nombre y Símbolo del Token",
+                "label-logo": "URL del Logo (Imagen del Token)",
+                "tip-logo": "💡 <strong>Consejo Pro:</strong> Sube la imagen de tu token a una plataforma IPFS como <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a>, copia el enlace directo resultante y pégalo aquí para que tu logo luzca oficial en la blockchain.",
+                "label-social": "Información / Redes (Web, X, Discord)",
+                "label-supply": "Suministro Total (Supply)",
+                "lp-title": "Aporte de Liquidez Base ZARD",
+                "lp-subtitle": "Requiere tener ZARD en tu billetera Binance Web3 / MetaMask",
+                "balance-label": "Balance ZARD disponible:",
+                "btn-back": "⬅ Volver",
+                "btn-deploy": "🚀 Desplegar y Crear Liquidez",
+                "status-label": "Estado:",
+                "status-ready": "Listo para configurar...",
+                "footer-text": "© 2026 ZARD Finance Ecosystem. Despliegue sincronizado com Web3 BSC."
+            },
+            en: {
+                "nav-web": "🌐 Official Web",
+                "nav-wallet": "👛 ZARD Wallet",
+                "nav-eco": "🚀 Ecosystem",
+                "btn-connect": "Connect Wallet",
+                "hero-title": "Welcome to ZARD Finance Core",
+                "hero-subtitle": "Select an ecosystem option to start financial innovation",
+                "card1-title": "ZARD Wallet",
+                "card1-desc": "Manage your assets and tokens securely within the network.",
+                "card1-link": "Open Wallet →",
+                "card2-title": "Create Token & Liquidity",
+                "card2-desc": "Deploy your own coin paired directly with ZARD.",
+                "card2-link": "Start Creation →",
+                "card3-title": "ZARD Ecosystem",
+                "card3-desc": "Explore alerts, official projects, and global platforms.",
+                "card3-link": "Explore Web →",
+                "creator-title": "ZARD Finance Creation Center",
+                "creator-subtitle": "Design your token with direct ZARD pair and automated deployment",
+                "label-name": "Token Name & Symbol",
+                "label-logo": "Logo URL (Token Image)",
+                "tip-logo": "💡 <strong>Pro Tip:</strong> Upload your token image to an IPFS gateway like <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a>, copy the direct link and paste it here.",
+                "label-social": "Info / Socials (Web, X, Discord)",
+                "label-supply": "Total Supply",
+                "lp-title": "Base ZARD Liquidity Contribution",
+                "lp-subtitle": "Requires holding ZARD in your Binance Web3 / MetaMask wallet",
+                "balance-label": "Available ZARD Balance:",
+                "btn-back": "⬅ Back",
+                "btn-deploy": "🚀 Deploy & Create Liquidity",
+                "status-label": "Status:",
+                "status-ready": "Ready to configure...",
+                "footer-text": "© 2026 ZARD Finance Ecosystem. Deployment synchronized with Web3 BSC."
+            },
+            zh: {
+                "nav-web": "🌐 官方网站",
+                "nav-wallet": "👛 ZARD 钱包",
+                "nav-eco": "🚀 生态系统",
+                "btn-connect": "连接钱包",
+                "hero-title": "欢迎来到 ZARD Finance 核心",
+                "hero-subtitle": "选择生态系统选项以开启金融创新",
+                "card1-title": "ZARD 钱包",
+                "card1-desc": "在网络中安全地管理您的资产和代币。",
+                "card1-link": "打开钱包 →",
+                "card2-title": "创建代币与流动性",
+                "card2-desc": "部署您自己的直接与 ZARD 配对的代币。",
+                "card2-link": "开始创建 →",
+                "card3-title": "ZARD 生态系统",
+                "card3-desc": "探索警报、官方项目和全球平台。",
+                "card3-link": "探索网页 →",
+                "creator-title": "ZARD Finance 创建中心",
+                "creator-subtitle": "设计带有 ZARD 直接交易对和自动部署功能的代币",
+                "label-name": "代币名称与符号",
+                "label-logo": "Logo 网址 (代币图片)",
+                "tip-logo": "💡 <strong>专业提示：</strong> 将代币图片上传到 IPFS 网关（如 <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a>），复制直接链接并粘贴此处。",
+                "label-social": "信息 / 社交媒体 (Web, X, Discord)",
+                "label-supply": "总供应量 (Supply)",
+                "lp-title": "基础 ZARD 流动性贡献",
+                "lp-subtitle": "需要在您的 Binance Web3 / MetaMask 钱包中持有 ZARD",
+                "balance-label": "可用 ZARD 余额:",
+                "btn-back": "⬅ 返回",
+                "btn-deploy": "🚀 部署并创建流动性",
+                "status-label": "状态:",
+                "status-ready": "准备配置...",
+                "footer-text": "© 2026 ZARD Finance Ecosystem. 部署已与 Web3 BSC 同步."
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if(element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+            localStorage.setItem('zard_lang', lang);
+        }
+
+        // Cargar idioma guardado o predeterminado
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('zard_lang') || 'es';
+            document.getElementById('languageSelect').value = savedLang;
+            changeLanguage(savedLang);
+        });
+
         function switchTab(tabName) {
             document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
             if(tabName === 'home') {
