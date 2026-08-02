@@ -3,90 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZAARD INNOVATION | Liquidez Ecosistema</title>
+    <title>ZAARD INNOVATION | Ecosistema Descentralizado</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Fondo de partículas -->
     <div id="particles-js"></div>
 
     <div class="main-wrapper">
-        <!-- BARRA DE NAVEGACIÓN -->
+        <!-- BARRA DE NAVEGACIÓN SUPERIOR (4 ETIQUETAS / ENLACES CLAVE) -->
         <header>
             <div class="logo-container">
-                <!-- LOGO PRINCIPAL (Imagen 2) -->
-                <img src="https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/170%20sin%20t%C3%ADtulo_20260707213436.png" alt="ZAARD INNOVATION" class="nav-logo">
+                <img src="https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/170%20sin%20t%C3%tulo_20260707213436.png" alt="ZAARD" class="nav-logo">
                 <span class="brand-name">ZAARD<span class="lite">INNOVATION</span></span>
             </div>
             
+            <nav class="nav-links">
+                <a href="https://figueredo56.github.io/zaard-official/" target="_blank" class="nav-tag">🌐 Web Oficial</a>
+                <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank" class="nav-tag">👛 ZARD Wallet</a>
+                <a href="#ecosystem" class="nav-tag active" onclick="switchTab('home')">🚀 Ecosistema</a>
+            </nav>
+
             <div class="header-right">
-                <!-- ENLACE AL ECOSISTEMA Y WALLET -->
-                <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank" class="ecosystem-link">🌐 ZARD Wallet</a>
                 <button id="connectWalletBtn" class="btn-connect">Conectar Billetera</button>
             </div>
         </header>
 
-        <!-- SECCIÓN PRINCIPAL DE LIQUIDEZ -->
-        <section class="liquidity-section">
-            <div class="liquidity-card glass-effect">
-                <div class="card-header">
-                    <h2>Añadir Liquidez</h2>
-                    <p>Impulsa el ecosistema conectando con ZARD</p>
+        <!-- CONTENEDOR DE PESTAÑAS (TABS) -->
+        <main class="content-container">
+
+            <!-- VISTA 1: HOME / BIENVENIDA (Las 3 tarjetas principales) -->
+            <section id="tab-home" class="view-section active">
+                <div class="welcome-hero">
+                    <img src="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png" alt="ZAARD Banner" class="hero-banner">
+                    <h1>Bienvenido al Núcleo de ZAARD</h1>
+                    <p>Selecciona una opción del ecosistema para comenzar la innovación</p>
                 </div>
 
-                <!-- Selección de Tu Token (ZAI/PANGA) -->
-                <div class="input-group">
-                    <label>Tu Token Personalizado</label>
-                    <div class="token-selector">
-                        <!-- LOGO NUEVO TOKEN (Imagen 3) -->
-                        <img src="https://raw.githubusercontent.com/figueredo56/PANGA_TOKEN-/refs/heads/main/CC_20260630_131234.png" alt="Token Logo"> 
-                        <input type="number" id="tokenAmount" placeholder="0.0">
-                        <span class="token-symbol">NEW</span>
+                <div class="hub-cards-grid">
+                    <!-- Tarjeta 1: Wallet -->
+                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/index.html/?img=zaard', '_blank')">
+                        <div class="card-icon">👛</div>
+                        <h3>ZARD Wallet</h3>
+                        <p>Gestiona tus activos y tokens de forma segura dentro de la red.</p>
+                        <span class="card-link-text">Abrir Billetera &rarr;</span>
+                    </div>
+
+                    <!-- Tarjeta 2: Crear Token (En medio, destacada) -->
+                    <div class="hub-card featured" onclick="switchTab('creator')">
+                        <div class="card-icon">✨</div>
+                        <h3>Crear Token & Liquidez</h3>
+                        <p>Despliega tu propia moneda emparejada directamente con ZARD.</p>
+                        <span class="card-link-text">Iniciar Creador &rarr;</span>
+                    </div>
+
+                    <!-- Tarjeta 3: Ecosistema / Web -->
+                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-official/', '_blank')">
+                        <div class="card-icon">🌐</div>
+                        <h3>ZAARD Ecosistema</h3>
+                        <p>Explora las alertas, proyectos oficiales y plataformas globales.</p>
+                        <span class="card-link-text">Explorar Web &rarr;</span>
                     </div>
                 </div>
+            </section>
 
-                <div class="divider-icon">⬇️</div>
 
-                <!-- Selección de ZARD como Moneda Base -->
-                <div class="input-group">
-                    <label>Moneda Base ZARD</label>
-                    <div class="token-selector selected">
-                        <!-- LOGO ZARD (Imagen 1) -->
-                        <img src="https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/156%20sin%20t%C3%ADtulo_20260703000150.png" alt="ZARD Logo">
-                        <input type="number" id="zardAmount" placeholder="0.0">
-                        <span class="token-symbol">ZARD</span>
+            <!-- VISTA 2: CREADOR DE TOKENS Y LIQUIDEZ (Con Supplys Rápidos y Metadatos) -->
+            <section id="tab-creator" class="view-section">
+                <div class="creator-header-banner">
+                    <img src="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png" alt="Creator Banner" class="top-creator-img">
+                    <h2>Centro de Creación ZAARD</h2>
+                    <p>Diseña tu token con par directo en ZARD y despliegue automatizado</p>
+                </div>
+
+                <div class="liquidity-card glass-effect">
+                    
+                    <!-- Datos Básicos del Token -->
+                    <div class="input-group">
+                        <label>Nombre y Símbolo del Token</label>
+                        <div class="dual-inputs">
+                            <input type="text" id="tokenName" placeholder="Ej: Zaard Innovation Coin" class="text-input">
+                            <input type="text" id="tokenSymbol" placeholder="Ej: ZAI" class="text-input short">
+                        </div>
                     </div>
-                    <small class="balance-text">Balance ZARD: <span id="zardBalance">0.00</span></small>
-                </div>
 
-                <!-- Botones de acción -->
-                <div class="action-buttons">
-                    <button id="approveBtn" class="btn-action approve">1. Aprobar ZARD</button>
-                    <button id="supplyBtn" class="btn-action supply">2. Crear Liquidez</button>
-                </div>
-                
-                <div class="lp-info-box">
-                    <small>Estado: <span id="statusText" class="text-glow">Esperando conexión...</span></small>
-                </div>
+                    <!-- URL del Logo y Links Oficiales -->
+                    <div class="input-group">
+                        <label>URL del Logo (Imagen del Token)</label>
+                        <input type="text" id="tokenLogoUrl" placeholder="https://tu-imagen-url.com/logo.png" class="text-input">
+                    </div>
 
-                <!-- BANNER PROMOCIONAL AL ECOSISTEMA (Imagen 4) -->
-                <div class="promo-container">
-                    <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank">
-                        <img src="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png" alt="Explora ZARD" class="promo-banner">
-                    </a>
+                    <div class="input-group">
+                        <label>Información / Web del Proyecto</label>
+                        <input type="text" id="projectInfoUrl" placeholder="https://tupaginaoficial.com" class="text-input">
+                    </div>
+
+                    <!-- Selector de Supply Rápido (1B, 1M, 1K) -->
+                    <div class="input-group">
+                        <label>Suministro Total (Supply)</label>
+                        <div class="supply-buttons">
+                            <button type="button" class="supply-btn" onclick="setSupply(1000)">1K</button>
+                            <button type="button" class="supply-btn" onclick="setSupply(1000000)">1M</button>
+                            <button type="button" class="supply-btn active" onclick="setSupply(1000000000)">1B</button>
+                        </div>
+                        <input type="number" id="tokenSupply" value="1000000000" class="text-input center">
+                    </div>
+
+                    <hr class="section-divider">
+
+                    <!-- Sección de Liquidez con ZARD -->
+                    <div class="card-header-sub">
+                        <h3>Aporte de Liquidez Base ZARD</h3>
+                        <p>Requiere tener ZARD en tu billetera Binance Web3 / MetaMask</p>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="token-selector selected">
+                            <img src="https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/156%20sin%20t%C3%tulo_20260703000150.png" alt="ZARD Logo">
+                            <input type="number" id="zardLiquidityAmount" placeholder="0.0">
+                            <span class="token-symbol">ZARD</span>
+                        </div>
+                        <small class="balance-text">Balance ZARD disponible: <span id="zardBalance">0.00</span></small>
+                    </div>
+
+                    <!-- Botones de Acción Global -->
+                    <div class="action-buttons">
+                        <button id="backHomeBtn" class="btn-action secondary" onclick="switchTab('home')">⬅ Volver</button>
+                        <button id="deployAndSupplyBtn" class="btn-action supply">🚀 Desplegar y Crear Liquidez</button>
+                    </div>
+                    
+                    <div class="lp-info-box">
+                        <small>Estado: <span id="statusText" class="text-glow">Listo para configurar...</span></small>
+                    </div>
                 </div>
+            </section>
 
-            </div>
-        </section>
+        </main>
 
-        <!-- FOOTER -->
         <footer>
-            <p>© 2026 ZAARD INNOVATION Ecosystem. Todos los derechos reservados.</p>
+            <p>© 2026 ZAARD INNOVATION Ecosystem. Despliegue sincronizado con Web3 BSC.</p>
         </footer>
     </div>
 
+    <script>
+        // Función para alternar entre la pantalla principal (Home) y el Creador
+        function switchTab(tabName) {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            if(tabName === 'home') {
+                document.getElementById('tab-home').classList.add('active');
+            } else if(tabName === 'creator') {
+                document.getElementById('tab-creator').classList.add('active');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Función para cambiar los supplys rápidos
+        function setSupply(val) {
+            document.querySelectorAll('.supply-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('tokenSupply').value = val;
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
     <script src="app.js"></script>
 </body>
