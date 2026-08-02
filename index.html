@@ -3,26 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZAARD INNOVATION | Ecosistema Descentralizado</title>
+    <title>ZARD Finance | Ecosistema Descentralizado</title>
+    
+    <!-- METADATOS DE VISTA PREVIA (WhatsApp, Telegram, X, Discord) -->
+    <meta property="Campaña" content="ZARD Finance - Centro de Creación y Liquidez Descentralizada">
+    <meta property="og:title" content="ZARD Finance | Ecosistema Descentralizado">
+    <meta property="og:description" content="Crea tu propio token emparejado con ZARD, gestiona tu billetera y explora el ecosistema financiero global.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png">
+    <meta property="og:url" content="https://figueredo56.github.io/zaard-innovation-dapp/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ZARD Finance | Ecosistema Descentralizado">
+    <meta name="twitter:description" content="Crea tu propio token emparejado con ZARD, gestiona tu billetera y explora el ecosistema financiero global.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png">
+
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div id="particles-js"></div>
-
     <div class="main-wrapper">
-        <!-- BARRA DE NAVEGACIÓN SUPERIOR (4 ETIQUETAS / ENLACES CLAVE) -->
+        <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
         <header>
             <div class="logo-container">
-                <img src="https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/170%20sin%20t%C3%tulo_20260707213436.png" alt="ZAARD" class="nav-logo">
-                <span class="brand-name">ZAARD<span class="lite">INNOVATION</span></span>
+                <img src="https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/170%20sin%20t%C3%tulo_20260707213436.png" alt="ZARD Finance" class="nav-logo">
+                <span class="brand-name">ZARD<span class="lite">FINANCE</span></span>
             </div>
             
             <nav class="nav-links">
                 <a href="https://figueredo56.github.io/zaard-official/" target="_blank" class="nav-tag">🌐 Web Oficial</a>
-                <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank" class="nav-tag">👛 ZARD Wallet</a>
-                <a href="#ecosystem" class="nav-tag active" onclick="switchTab('home')">🚀 Ecosistema</a>
+                <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="nav-tag">👛 ZARD Wallet</a>
+                <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank" class="nav-tag">🚀 Ecosistema</a>
             </nav>
 
             <div class="header-right">
@@ -33,24 +46,22 @@
         <!-- CONTENEDOR DE PESTAÑAS (TABS) -->
         <main class="content-container">
 
-            <!-- VISTA 1: HOME / BIENVENIDA (Las 3 tarjetas principales) -->
+            <!-- VISTA 1: HOME / BIENVENIDA -->
             <section id="tab-home" class="view-section active">
                 <div class="welcome-hero">
-                    <img src="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png" alt="ZAARD Banner" class="hero-banner">
-                    <h1>Bienvenido al Núcleo de ZAARD</h1>
-                    <p>Selecciona una opción del ecosistema para comenzar la innovación</p>
+                    <img src="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png" alt="ZARD Finance Banner" class="hero-banner">
+                    <h1>Bienvenido al Núcleo de ZARD Finance</h1>
+                    <p>Selecciona una opción del ecosistema para comenzar la innovación financiera</p>
                 </div>
 
                 <div class="hub-cards-grid">
-                    <!-- Tarjeta 1: Wallet -->
-                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/index.html/?img=zaard', '_blank')">
+                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-wallet/wallet.html', '_blank')">
                         <div class="card-icon">👛</div>
                         <h3>ZARD Wallet</h3>
                         <p>Gestiona tus activos y tokens de forma segura dentro de la red.</p>
                         <span class="card-link-text">Abrir Billetera &rarr;</span>
                     </div>
 
-                    <!-- Tarjeta 2: Crear Token (En medio, destacada) -->
                     <div class="hub-card featured" onclick="switchTab('creator')">
                         <div class="card-icon">✨</div>
                         <h3>Crear Token & Liquidez</h3>
@@ -58,10 +69,9 @@
                         <span class="card-link-text">Iniciar Creador &rarr;</span>
                     </div>
 
-                    <!-- Tarjeta 3: Ecosistema / Web -->
-                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-official/', '_blank')">
+                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/index.html/?img=zaard', '_blank')">
                         <div class="card-icon">🌐</div>
-                        <h3>ZAARD Ecosistema</h3>
+                        <h3>ZARD Ecosistema</h3>
                         <p>Explora las alertas, proyectos oficiales y plataformas globales.</p>
                         <span class="card-link-text">Explorar Web &rarr;</span>
                     </div>
@@ -69,34 +79,37 @@
             </section>
 
 
-            <!-- VISTA 2: CREADOR DE TOKENS Y LIQUIDEZ (Con Supplys Rápidos y Metadatos) -->
+            <!-- VISTA 2: CREADOR DE TOKENS Y LIQUIDEZ -->
             <section id="tab-creator" class="view-section">
                 <div class="creator-header-banner">
                     <img src="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png" alt="Creator Banner" class="top-creator-img">
-                    <h2>Centro de Creación ZAARD</h2>
+                    <h2>Centro de Creación ZARD Finance</h2>
                     <p>Diseña tu token con par directo en ZARD y despliegue automatizado</p>
                 </div>
 
                 <div class="liquidity-card glass-effect">
                     
-                    <!-- Datos Básicos del Token -->
                     <div class="input-group">
                         <label>Nombre y Símbolo del Token</label>
                         <div class="dual-inputs">
-                            <input type="text" id="tokenName" placeholder="Ej: Zaard Innovation Coin" class="text-input">
-                            <input type="text" id="tokenSymbol" placeholder="Ej: ZAI" class="text-input short">
+                            <input type="text" id="tokenName" placeholder="Ej: Zard Finance Coin" class="text-input">
+                            <input type="text" id="tokenSymbol" placeholder="Ej: ZFC" class="text-input short">
                         </div>
                     </div>
 
-                    <!-- URL del Logo y Links Oficiales -->
+                    <!-- URL del Logo + Aviso fino en verde -->
                     <div class="input-group">
                         <label>URL del Logo (Imagen del Token)</label>
-                        <input type="text" id="tokenLogoUrl" placeholder="https://tu-imagen-url.com/logo.png" class="text-input">
+                        <input type="text" id="tokenLogoUrl" placeholder="https://gateway.pinata.cloud/ipfs/tu_hash_imagen" class="text-input">
+                        
+                        <div class="tip-box-green">
+                            💡 <strong>Consejo Pro:</strong> Sube la imagen de tu token a una plataforma IPFS como <a href="https://www.pinata.cloud" target="_blank">Pinata.cloud</a>, copia el enlace directo resultante y pégalo aquí para que tu logo luzca oficial en la blockchain.
+                        </div>
                     </div>
 
                     <div class="input-group">
-                        <label>Información / Web del Proyecto</label>
-                        <input type="text" id="projectInfoUrl" placeholder="https://tupaginaoficial.com" class="text-input">
+                        <label>Información / Redes (Web, X, Discord)</label>
+                        <input type="text" id="projectInfoUrl" placeholder="https://tupaginaweb.com | @TuX | Discord" class="text-input">
                     </div>
 
                     <!-- Selector de Supply Rápido (1B, 1M, 1K) -->
@@ -112,7 +125,6 @@
 
                     <hr class="section-divider">
 
-                    <!-- Sección de Liquidez con ZARD -->
                     <div class="card-header-sub">
                         <h3>Aporte de Liquidez Base ZARD</h3>
                         <p>Requiere tener ZARD en tu billetera Binance Web3 / MetaMask</p>
@@ -127,7 +139,6 @@
                         <small class="balance-text">Balance ZARD disponible: <span id="zardBalance">0.00</span></small>
                     </div>
 
-                    <!-- Botones de Acción Global -->
                     <div class="action-buttons">
                         <button id="backHomeBtn" class="btn-action secondary" onclick="switchTab('home')">⬅ Volver</button>
                         <button id="deployAndSupplyBtn" class="btn-action supply">🚀 Desplegar y Crear Liquidez</button>
@@ -142,12 +153,11 @@
         </main>
 
         <footer>
-            <p>© 2026 ZAARD INNOVATION Ecosystem. Despliegue sincronizado con Web3 BSC.</p>
+            <p>© 2026 ZARD Finance Ecosystem. Despliegue sincronizado con Web3 BSC.</p>
         </footer>
     </div>
 
     <script>
-        // Función para alternar entre la pantalla principal (Home) y el Creador
         function switchTab(tabName) {
             document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
             if(tabName === 'home') {
@@ -158,7 +168,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Función para cambiar los supplys rápidos
         function setSupply(val) {
             document.querySelectorAll('.supply-btn').forEach(b => b.classList.remove('active'));
             event.target.classList.add('active');
