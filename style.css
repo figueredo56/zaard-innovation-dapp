@@ -1,9 +1,9 @@
 :root {
     --bg-color: #050608;
     --card-bg: rgba(14, 15, 22, 0.9); 
-    --primary-purple: #9d4edd; /* Morado corporativo de la captura */
+    --primary-purple: #9d4edd;
     --purple-glow: rgba(157, 78, 221, 0.4);
-    --neon-green: #00e676;     /* Verde esmeralda brillante de botones */
+    --neon-green: #00e676;
     --text-main: #ffffff;
     --text-muted: #94a3b8;
     --glass-border: 1px solid rgba(157, 78, 221, 0.3);
@@ -107,7 +107,7 @@ header {
 
 .hub-card {
     background: var(--card-bg);
-    border: 2px dashed rgba(157, 78, 221, 0.4); /* Estilo de borde punteado idéntico al de tu captura */
+    border: 2px dashed rgba(157, 78, 221, 0.4);
     border-radius: 20px;
     padding: 25px;
     text-align: center;
@@ -183,6 +183,25 @@ header {
     color: #fff;
     border-color: var(--primary-purple);
     box-shadow: 0 0 10px var(--purple-glow);
+}
+
+/* AVISO FINO EN VERDE PARA LA IMAGEN */
+.tip-box-green {
+    margin-top: 8px;
+    background: rgba(0, 230, 118, 0.08);
+    border: 1px dashed rgba(0, 230, 118, 0.4);
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    color: #a7f3d0;
+    line-height: 1.4;
+}
+.tip-box-green strong {
+    color: var(--neon-green);
+}
+.tip-box-green a {
+    color: var(--neon-green);
+    text-decoration: underline;
 }
 
 .section-divider { border: 0; height: 1px; background: rgba(157, 78, 221, 0.2); margin: 20px 0; }
