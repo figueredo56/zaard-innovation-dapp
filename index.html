@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title id="page-title">ZARD Finance | Ecosistema Descentralizado</title>
     
     <!-- METADATOS DE VISTA PREVIA -->
@@ -18,7 +18,7 @@
 <body>
 
     <div class="main-wrapper">
-        <!-- BARRA DE NAVEGACIÓN SUPERIOR (Limpia y profesional, sin enlaces duplicados) -->
+        <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
         <header>
             <div class="logo-container">
                 <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/CC_20260527_151822.png" alt="ZARD Finance" class="nav-logo">
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="hub-cards-grid">
-                    <!-- TARJETA WALLET CON IMAGEN DEL LOGO OFICIAL -->
+                    <!-- TARJETA 1: WALLET -->
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-wallet/wallet.html', '_blank')">
                         <div class="card-img-square">
                             <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/CC_20260527_151822.png" alt="ZARD Wallet" class="card-custom-img">
@@ -58,19 +58,19 @@
                         <span class="card-link-text" data-i18n="card1-link">Abrir Billetera &rarr;</span>
                     </div>
 
-                    <!-- TARJETA CREAR TOKEN CON LA NUEVA IMAGEN Y CONTENEDOR AJUSTADO -->
-                    <div class="hub-card featured" onclick="switchTab('creator')">
+                    <!-- TARJETA 2: CREAR TOKEN (Con la nueva imagen solicitada y formato unificado) -->
+                    <div class="hub-card" onclick="switchTab('creator')">
                         <div class="card-img-square">
-                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/202%20sin%20t%C3%ADtulo_20260728095615.png" alt="Crear Token & Liquidez" class="card-custom-img">
+                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/214%20sin%20t%C3%ADtulo_20260802110910.png" alt="Crear Token & Liquidez" class="card-custom-img">
                         </div>
                         <h3 data-i18n="card2-title">Crear Token & Liquidez</h3>
-                        <p data-i18n="card2-desc" style="font-size: 0.78rem; margin-bottom: 15px;">Despliega tu propia moneda emparejada directamente con ZARD.</p>
+                        <p data-i18n="card2-desc">Despliega tu propia moneda emparejada directamente con ZARD.</p>
                         <span class="card-link-text" data-i18n="card2-link">Iniciar Creación &rarr;</span>
                     </div>
 
-                    <!-- TARJETA ECOSISTEMA -->
+                    <!-- TARJETA 3: ECOSISTEMA -->
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/index.html/?img=zaard', '_blank')">
-                        <div class="card-img-square" style="border-color: var(--neon-green);">
+                        <div class="card-img-square">
                             <img src="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png" alt="ZARD Ecosistema" class="card-custom-img">
                         </div>
                         <h3 data-i18n="card3-title">ZARD Ecosistema</h3>
@@ -79,7 +79,7 @@
                     </div>
                 </div>
 
-                <!-- SECCIÓN DE ENLACES DEL ECOSISTEMA INFERIOR (Organizados y profesionales) -->
+                <!-- ENLACES RÁPIDOS INFERIORES -->
                 <div class="ecosystem-footer-links">
                     <h4 data-i18n="eco-links-title">🔗 Enlaces Rápidos del Ecosistema</h4>
                     <div class="footer-links-grid">
@@ -90,7 +90,7 @@
                 </div>
             </section>
 
-            <!-- VISTA 2: CREADOR DE TOKENS Y LIQUIDEZ -->
+            <!-- VISTA 2: CREADOR DE TOKENS -->
             <section id="tab-creator" class="view-section">
                 <div class="creator-header-banner">
                     <img src="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png" alt="Creator Banner" class="top-creator-img">
@@ -99,7 +99,6 @@
                 </div>
 
                 <div class="liquidity-card glass-effect">
-                    
                     <div class="input-group">
                         <label data-i18n="label-name">Nombre y Símbolo del Token</label>
                         <div class="dual-inputs">
@@ -110,16 +109,15 @@
 
                     <div class="input-group">
                         <label data-i18n="label-logo">URL del Logo (Imagen del Token)</label>
-                        <input type="text" id="tokenLogoUrl" placeholder="https://gateway.pinata.cloud/ipfs/tu_hash_imagen" class="text-input">
-                        
+                        <input type="text" id="tokenLogoUrl" placeholder="https://gateway.pinata.cloud/ipfs/tu_hash" class="text-input">
                         <div class="tip-box-green" data-i18n="tip-logo">
-                            💡 <strong>Consejo Pro:</strong> Sube la imagen de tu token a una plataforma IPFS como <a href="https://www.pinata.cloud" target="_blank">Pinata.cloud</a>, copia el enlace directo resultante y pégalo aquí para que tu logo luzca oficial en la blockchain.
+                            💡 <strong>Consejo Pro:</strong> Sube tu logo a <a href="https://www.pinata.cloud" target="_blank">Pinata.cloud</a> y pega aquí el enlace directo IPFS.
                         </div>
                     </div>
 
                     <div class="input-group">
                         <label data-i18n="label-social">Información / Redes (Web, X, Discord)</label>
-                        <input type="text" id="projectInfoUrl" placeholder="https://tupaginaweb.com | @TuX | Discord" class="text-input">
+                        <input type="text" id="projectInfoUrl" placeholder="https://tupaginaweb.com | @TuX" class="text-input">
                     </div>
 
                     <div class="input-group">
@@ -158,7 +156,6 @@
                     </div>
                 </div>
             </section>
-
         </main>
 
         <footer>
@@ -169,103 +166,58 @@
     <script>
         const translations = {
             es: {
-                "nav-web": "🌐 Web Oficial",
-                "nav-wallet": "👛 ZARD Wallet",
-                "nav-eco": "🚀 Ecosistema Global",
+                "nav-web": "🌐 Web Oficial", "nav-wallet": "👛 ZARD Wallet", "nav-eco": "🚀 Ecosistema Global",
                 "btn-connect": "Conectar Billetera",
                 "hero-title": "Bienvenido al Núcleo de ZARD Finance",
                 "hero-subtitle": "Selecciona una opción del ecosistema para comenzar la innovación financiera",
-                "card1-title": "ZARD Wallet",
-                "card1-desc": "Gestiona tus activos y tokens de forma segura dentro de la red.",
-                "card1-link": "Abrir Billetera →",
-                "card2-title": "Crear Token & Liquidez",
-                "card2-desc": "Despliega tu propia moneda emparejada directamente con ZARD.",
-                "card2-link": "Iniciar Creación →",
-                "card3-title": "ZARD Ecosistema",
-                "card3-desc": "Explora las alertas, proyectos oficiales y plataformas globales.",
-                "card3-link": "Explorar Web →",
+                "card1-title": "ZARD Wallet", "card1-desc": "Gestiona tus activos y tokens de forma segura dentro de la red.", "card1-link": "Abrir Billetera →",
+                "card2-title": "Crear Token & Liquidez", "card2-desc": "Despliega tu propia moneda emparejada directamente con ZARD.", "card2-link": "Iniciar Creación →",
+                "card3-title": "ZARD Ecosistema", "card3-desc": "Explora las alertas, proyectos oficiales y plataformas globales.", "card3-link": "Explorar Web →",
                 "eco-links-title": "🔗 Enlaces Rápidos del Ecosistema",
-                "creator-title": "Centro de Creación ZARD Finance",
-                "creator-subtitle": "Diseña tu token con par directo en ZARD y despliegue automatizado",
-                "label-name": "Nombre y Símbolo del Token",
-                "label-logo": "URL del Logo (Imagen del Token)",
-                "tip-logo": "💡 <strong>Consejo Pro:</strong> Sube la imagen de tu token a una plataforma IPFS como <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a>, copia el enlace directo resultante y pégalo aquí para que tu logo luzca oficial en la blockchain.",
-                "label-social": "Información / Redes (Web, X, Discord)",
-                "label-supply": "Suministro Total (Supply)",
-                "lp-title": "Aporte de Liquidez Base ZARD",
-                "lp-subtitle": "Requiere tener ZARD en tu billetera Binance Web3 / MetaMask",
-                "balance-label": "Balance ZARD disponible:",
-                "btn-back": "⬅ Volver",
-                "btn-deploy": "🚀 Desplegar y Crear Liquidez",
-                "status-label": "Estado:",
-                "status-ready": "Listo para configurar...",
+                "creator-title": "Centro de Creación ZARD Finance", "creator-subtitle": "Diseña tu token con par directo en ZARD y despliegue automatizado",
+                "label-name": "Nombre y Símbolo del Token", "label-logo": "URL del Logo (Imagen del Token)",
+                "tip-logo": "💡 <strong>Consejo Pro:</strong> Sube tu logo a <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a> y pega aquí el enlace directo IPFS.",
+                "label-social": "Información / Redes (Web, X, Discord)", "label-supply": "Suministro Total (Supply)",
+                "lp-title": "Aporte de Liquidez Base ZARD", "lp-subtitle": "Requiere tener ZARD en tu billetera Binance Web3 / MetaMask",
+                "balance-label": "Balance ZARD disponible:", "btn-back": "⬅ Volver", "btn-deploy": "🚀 Desplegar y Crear Liquidez",
+                "status-label": "Estado:", "status-ready": "Listo para configurar...",
                 "footer-text": "© 2026 ZARD Finance Ecosystem. Despliegue sincronizado con Web3 BSC."
             },
             en: {
-                "nav-web": "🌐 Official Web",
-                "nav-wallet": "👛 ZARD Wallet",
-                "nav-eco": "🚀 Global Ecosystem",
+                "nav-web": "🌐 Official Web", "nav-wallet": "👛 ZARD Wallet", "nav-eco": "🚀 Global Ecosystem",
                 "btn-connect": "Connect Wallet",
                 "hero-title": "Welcome to ZARD Finance Core",
                 "hero-subtitle": "Select an ecosystem option to start financial innovation",
-                "card1-title": "ZARD Wallet",
-                "card1-desc": "Manage your assets and tokens securely within the network.",
-                "card1-link": "Open Wallet →",
-                "card2-title": "Create Token & Liquidity",
-                "card2-desc": "Deploy your own coin paired directly with ZARD.",
-                "card2-link": "Start Creation →",
-                "card3-title": "ZARD Ecosystem",
-                "card3-desc": "Explore alerts, official projects, and global platforms.",
-                "card3-link": "Explore Web →",
+                "card1-title": "ZARD Wallet", "card1-desc": "Manage your assets and tokens securely within the network.", "card1-link": "Open Wallet →",
+                "card2-title": "Create Token & Liquidity", "card2-desc": "Deploy your own coin paired directly with ZARD.", "card2-link": "Start Creation →",
+                "card3-title": "ZARD Ecosystem", "card3-desc": "Explore alerts, official projects, and global platforms.", "card3-link": "Explore Web →",
                 "eco-links-title": "🔗 Ecosystem Quick Links",
-                "creator-title": "ZARD Finance Creation Center",
-                "creator-subtitle": "Design your token with direct ZARD pair and automated deployment",
-                "label-name": "Token Name & Symbol",
-                "label-logo": "Logo URL (Token Image)",
-                "tip-logo": "💡 <strong>Pro Tip:</strong> Upload your token image to an IPFS gateway like <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a>, copy the direct link and paste it here.",
-                "label-social": "Info / Socials (Web, X, Discord)",
-                "label-supply": "Total Supply",
-                "lp-title": "Base ZARD Liquidity Contribution",
-                "lp-subtitle": "Requires holding ZARD in your Binance Web3 / MetaMask wallet",
-                "balance-label": "Available ZARD Balance:",
-                "btn-back": "⬅ Back",
-                "btn-deploy": "🚀 Deploy & Create Liquidity",
-                "status-label": "Status:",
-                "status-ready": "Ready to configure...",
+                "creator-title": "ZARD Finance Creation Center", "creator-subtitle": "Design your token with direct ZARD pair and automated deployment",
+                "label-name": "Token Name & Symbol", "label-logo": "Logo URL (Token Image)",
+                "tip-logo": "💡 <strong>Pro Tip:</strong> Upload your logo to <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a> and paste the direct IPFS link here.",
+                "label-social": "Info / Socials (Web, X, Discord)", "label-supply": "Total Supply",
+                "lp-title": "Base ZARD Liquidity Contribution", "lp-subtitle": "Requires holding ZARD in your Binance Web3 / MetaMask wallet",
+                "balance-label": "Available ZARD Balance:", "btn-back": "⬅ Back", "btn-deploy": "🚀 Deploy & Create Liquidity",
+                "status-label": "Status:", "status-ready": "Ready to configure...",
                 "footer-text": "© 2026 ZARD Finance Ecosystem. Deployment synchronized with Web3 BSC."
             },
             zh: {
-                "nav-web": "🌐 官方网站",
-                "nav-wallet": "👛 ZARD 钱包",
-                "nav-eco": "🚀 全球生态系统",
+                "nav-web": "🌐 官方网站", "nav-wallet": "👛 ZARD 钱包", "nav-eco": "🚀 全球生态系统",
                 "btn-connect": "连接钱包",
                 "hero-title": "欢迎来到 ZARD Finance 核心",
                 "hero-subtitle": "选择生态系统选项以开启金融创新",
-                "card1-title": "ZARD 钱包",
-                "card1-desc": "在网络中安全地管理您的资产和代币。",
-                "card1-link": "打开钱包 →",
-                "card2-title": "创建代币与流动性",
-                "card2-desc": "部署您自己的直接与 ZARD 配对的代币。",
-                "card2-link": "开始创建 →",
-                "card3-title": "ZARD 生态系统",
-                "card3-desc": "探索警报、官方项目和全球平台。",
-                "card3-link": "探索网页 →",
+                "card1-title": "ZARD 钱包", "card1-desc": "在网络中安全地管理您的资产和代币。", "card1-link": "打开钱包 →",
+                "card2-title": "创建代币与流动性", "card2-desc": "部署您自己的直接与 ZARD 配对的代币。", "card2-link": "开始创建 →",
+                "card3-title": "ZARD 生态系统", "card3-desc": "探索警报、官方项目和全球平台。", "card3-link": "探索网页 →",
                 "eco-links-title": "🔗 生态系统快速链接",
-                "creator-title": "ZARD Finance 创建中心",
-                "creator-subtitle": "设计带有 ZARD 直接交易对和自动部署功能的代币",
-                "label-name": "代币名称与符号",
-                "label-logo": "Logo 网址 (代币图片)",
-                "tip-logo": "💡 <strong>专业提示：</strong> 将代币图片上传到 IPFS 网关（如 <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a>），复制直接链接并粘贴此处。",
-                "label-social": "信息 / 社交媒体 (Web, X, Discord)",
-                "label-supply": "总供应量 (Supply)",
-                "lp-title": "基础 ZARD 流动性贡献",
-                "lp-subtitle": "需要在您的 Binance Web3 / MetaMask 钱包中持有 ZARD",
-                "balance-label": "可用 ZARD 余额:",
-                "btn-back": "⬅ 返回",
-                "btn-deploy": "🚀 部署并创建流动性",
-                "status-label": "状态:",
-                "status-ready": "准备配置...",
-                "footer-text": "© 2026 ZARD Finance Ecosystem. 部署已与 Web3 BSC 同步."
+                "creator-title": "ZARD Finance 创建中心", "creator-subtitle": "设计带有 ZARD 直接交易对和自动部署功能的代币",
+                "label-name": "代币名称与符号", "label-logo": "Logo 网址 (代币图片)",
+                "tip-logo": "💡 <strong>专业提示：</strong> 将您的 logo 上传到 <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a> 并在此处粘贴直接 IPFS 链接。",
+                "label-social": "信息 / 社交媒体", "label-supply": "总供应量",
+                "lp-title": "基础 ZARD 流动性贡献", "lp-subtitle": "需要在您的钱包中持有 ZARD",
+                "balance-label": "可用 ZARD 余额:", "btn-back": "⬅ 返回", "btn-deploy": "🚀 部署并创建流动性",
+                "status-label": "状态:", "status-ready": "准备配置...",
+                "footer-text": "© 2026 ZARD Finance Ecosystem. 部署已同步."
             }
         };
 
