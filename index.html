@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAARD INNOVATION | Liquidez Ecosistema</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fondo de partículas -->
+    <div id="particles-js"></div>
+
+    <div class="main-wrapper">
+        <!-- BARRA DE NAVEGACIÓN -->
+        <header>
+            <div class="logo-container">
+                <!-- LOGO PRINCIPAL (Imagen 2) -->
+                <img src="https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/170%20sin%20t%C3%ADtulo_20260707213436.png" alt="ZAARD INNOVATION" class="nav-logo">
+                <span class="brand-name">ZAARD<span class="lite">INNOVATION</span></span>
+            </div>
+            
+            <div class="header-right">
+                <!-- ENLACE AL ECOSISTEMA Y WALLET -->
+                <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank" class="ecosystem-link">🌐 ZARD Wallet</a>
+                <button id="connectWalletBtn" class="btn-connect">Conectar Billetera</button>
+            </div>
+        </header>
+
+        <!-- SECCIÓN PRINCIPAL DE LIQUIDEZ -->
+        <section class="liquidity-section">
+            <div class="liquidity-card glass-effect">
+                <div class="card-header">
+                    <h2>Añadir Liquidez</h2>
+                    <p>Impulsa el ecosistema conectando con ZARD</p>
+                </div>
+
+                <!-- Selección de Tu Token (ZAI/PANGA) -->
+                <div class="input-group">
+                    <label>Tu Token Personalizado</label>
+                    <div class="token-selector">
+                        <!-- LOGO NUEVO TOKEN (Imagen 3) -->
+                        <img src="https://raw.githubusercontent.com/figueredo56/PANGA_TOKEN-/refs/heads/main/CC_20260630_131234.png" alt="Token Logo"> 
+                        <input type="number" id="tokenAmount" placeholder="0.0">
+                        <span class="token-symbol">NEW</span>
+                    </div>
+                </div>
+
+                <div class="divider-icon">⬇️</div>
+
+                <!-- Selección de ZARD como Moneda Base -->
+                <div class="input-group">
+                    <label>Moneda Base ZARD</label>
+                    <div class="token-selector selected">
+                        <!-- LOGO ZARD (Imagen 1) -->
+                        <img src="https://raw.githubusercontent.com/figueredo56/ZARD.token/refs/heads/main/156%20sin%20t%C3%ADtulo_20260703000150.png" alt="ZARD Logo">
+                        <input type="number" id="zardAmount" placeholder="0.0">
+                        <span class="token-symbol">ZARD</span>
+                    </div>
+                    <small class="balance-text">Balance ZARD: <span id="zardBalance">0.00</span></small>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="action-buttons">
+                    <button id="approveBtn" class="btn-action approve">1. Aprobar ZARD</button>
+                    <button id="supplyBtn" class="btn-action supply">2. Crear Liquidez</button>
+                </div>
+                
+                <div class="lp-info-box">
+                    <small>Estado: <span id="statusText" class="text-glow">Esperando conexión...</span></small>
+                </div>
+
+                <!-- BANNER PROMOCIONAL AL ECOSISTEMA (Imagen 4) -->
+                <div class="promo-container">
+                    <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank">
+                        <img src="https://raw.githubusercontent.com/figueredo56/ZAARD-Alerta-Explicada/refs/heads/main/CC_20260430_215529.png" alt="Explora ZARD" class="promo-banner">
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2026 ZAARD INNOVATION Ecosystem. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
