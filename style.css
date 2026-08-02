@@ -6,7 +6,6 @@
     --neon-green: #00e676;
     --text-main: #ffffff;
     --text-muted: #cbd5e1;
-    --glass-border: 1px solid rgba(176, 66, 255, 0.5);
     --font-main: 'Poppins', sans-serif;
 }
 
@@ -28,7 +27,7 @@ body {
     margin: 0 auto;
 }
 
-/* HEADER Y ETIQUETAS */
+/* HEADER Y NAVEGACIÓN */
 header {
     display: flex;
     justify-content: space-between;
@@ -65,13 +64,8 @@ header {
     border: 1px solid rgba(176, 66, 255, 0.6);
 }
 
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+.header-right { display: flex; align-items: center; gap: 10px; }
 
-/* Selector de Idiomas */
 .lang-selector {
     background: rgba(0, 0, 0, 0.6);
     border: 1.5px solid rgba(176, 66, 255, 0.5);
@@ -84,9 +78,7 @@ header {
     cursor: pointer;
     transition: 0.3s;
 }
-.lang-selector:hover {
-    border-color: var(--neon-green);
-}
+.lang-selector:hover { border-color: var(--neon-green); }
 
 .btn-connect {
     background: var(--neon-green);
@@ -100,16 +92,12 @@ header {
     box-shadow: 0 0 15px rgba(0, 230, 118, 0.4);
     transition: 0.3s;
 }
-.btn-connect:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 230, 118, 0.7);
-}
+.btn-connect:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(0, 230, 118, 0.7); }
 
-/* SISTEMA DE VISTAS (TABS) */
 .view-section { display: none; animation: fadeIn 0.4s ease-in-out; }
 .view-section.active { display: block; }
 
-/* VISTA HOME: 3 TARJETAS DE BIENVENIDA */
+/* HOME HERO Y TARJETAS */
 .welcome-hero { text-align: center; margin-bottom: 30px; }
 .hero-banner {
     width: 100%;
@@ -151,23 +139,28 @@ header {
     box-shadow: 0 0 20px rgba(176, 66, 255, 0.3);
 }
 
-/* Contenedor de la imagen integrada en la tarjeta */
-.card-img-container {
-    width: 100%;
-    height: 110px;
-    border-radius: 12px;
+/* CONTENEDOR CUADRADO PERFECTO PARA LA IMAGEN (SIN RECORTAR) */
+.card-img-square {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 12px auto;
+    border-radius: 16px;
     overflow: hidden;
-    margin-bottom: 12px;
-    border: 1px solid rgba(176, 66, 255, 0.4);
+    border: 2px solid var(--primary-purple);
+    box-shadow: 0 0 15px var(--purple-glow);
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .card-custom-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Mantiene la proporción completa sin romper ni deformar */
     transition: transform 0.3s ease;
 }
 .hub-card:hover .card-custom-img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .card-icon { font-size: 2.5rem; margin-bottom: 10px; }
@@ -175,7 +168,7 @@ header {
 .hub-card p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px; }
 .card-link-text { font-size: 0.85rem; color: var(--neon-green); font-weight: 600; }
 
-/* VISTA CREADOR DE TOKENS */
+/* CREADOR DE TOKENS */
 .creator-header-banner { text-align: center; margin-bottom: 20px; }
 .top-creator-img { width: 100%; max-height: 140px; object-fit: cover; border-radius: 12px; border: 2px solid rgba(176, 66, 255, 0.5); box-shadow: 0 0 15px rgba(176, 66, 255, 0.2); margin-bottom: 10px; }
 .creator-header-banner h2 { font-size: 1.5rem; color: #d8b4fe; text-shadow: 0 0 12px var(--purple-glow); }
@@ -211,7 +204,6 @@ header {
 .text-input.short { max-width: 100px; text-align: center; font-weight: bold; color: #d8b4fe; }
 .text-input.center { text-align: center; font-weight: bold; }
 
-/* Botones de Supply Rápido */
 .supply-buttons { display: flex; gap: 10px; margin-bottom: 8px; }
 .supply-btn {
     flex: 1;
@@ -231,7 +223,6 @@ header {
     box-shadow: 0 0 12px var(--purple-glow);
 }
 
-/* AVISO FINO EN VERDE PARA LA IMAGEN */
 .tip-box-green {
     margin-top: 8px;
     background: rgba(0, 230, 118, 0.08);
@@ -242,13 +233,8 @@ header {
     color: #a7f3d0;
     line-height: 1.4;
 }
-.tip-box-green strong {
-    color: var(--neon-green);
-}
-.tip-box-green a {
-    color: var(--neon-green);
-    text-decoration: underline;
-}
+.tip-box-green strong { color: var(--neon-green); }
+.tip-box-green a { color: var(--neon-green); text-decoration: underline; }
 
 .section-divider { border: 0; height: 1.5px; background: rgba(176, 66, 255, 0.3); margin: 20px 0; }
 .card-header-sub h3 { font-size: 1.1rem; color: #d8b4fe; }
