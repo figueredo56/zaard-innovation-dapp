@@ -6,15 +6,13 @@
     <title id="page-title">ZARD Finance | Ecosistema Descentralizado</title>
     
     <!-- Etiquetas Open Graph para Redes Sociales -->
-    <meta property="og:url" content="https://figueredo56.github.io/zaard-innovation-dapp/">
+    <meta property="og:url" content="https://figueredo56.github.io/DAIoficial/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/DAIoficial/refs/heads/main/CC_20260925_200839.png">
     <!-- METADATOS DE VISTA PREVIA -->
     <meta property="og:title" content="ZARD Finance | Ecosistema Descentralizado">
     <meta property="og:description" content="Crea tu propio token emparejado con ZARD, gestiona tu billetera y explora el ecosistema financiero global.">
     <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/214%20sin%20t%C3%ADtulo_20260802110910.png">
-    <meta property="og:url" content="https://figueredo56.github.io/zaard-innovation-dapp/">
-    <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -52,7 +50,7 @@
                 </div>
 
                 <div class="hub-cards-grid">
-                    <!-- TARJETA 1: ZARD WALLET (Usa Zaard2) -->
+                    <!-- TARJETA 1: ZARD WALLET -->
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-wallet/wallet.html', '_blank')">
                         <div class="card-img-banner">
                             <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/215%20sin%20t%C3%ADtulo_20260802201954.png" alt="ZARD Wallet" class="card-custom-img">
@@ -62,7 +60,7 @@
                         <span class="card-link-text" data-i18n="card1-link">Abrir Billetera &rarr;</span>
                     </div>
 
-                    <!-- TARJETA 2: CREAR TOKEN & LIQUIDEZ (Usa CREATE) -->
+                    <!-- TARJETA 2: CREAR TOKEN & LIQUIDEZ -->
                     <div class="hub-card" onclick="switchTab('creator')">
                         <div class="card-img-banner">
                             <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/215%20sin%20t%C3%ADtulo_20260802191040.png" alt="Crear Token & Liquidez" class="card-custom-img">
@@ -72,8 +70,8 @@
                         <span class="card-link-text" data-i18n="card2-link">Iniciar Creación &rarr;</span>
                     </div>
 
-                    <!-- TARJETA 3: ZARD ECOSISTEMA (Usa Zaard3) -->
-                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/index.html/?img=zaard', '_blank')">
+                    <!-- TARJETA 3: ZARD ECOSISTEMA -->
+                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/DAIoficial/', '_blank')">
                         <div class="card-img-banner">
                             <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/215%20sin%20t%C3%ADtulo_20260802202340.png" alt="ZARD Ecosistema" class="card-custom-img">
                         </div>
@@ -87,9 +85,9 @@
                 <div class="ecosystem-footer-links">
                     <h4 data-i18n="eco-links-title">🔗 Enlaces Rápidos del Ecosistema</h4>
                     <div class="footer-links-grid">
-                        <a href="https://figueredo56.github.io/zaard-official/" target="_blank" class="eco-link-btn" data-i18n="nav-web">🌐 Web Oficial</a>
+                        <a href="https://figueredo56.github.io/DAIoficial/" target="_blank" class="eco-link-btn" data-i18n="nav-web">🌐 Web Oficial</a>
                         <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="eco-link-btn" data-i18n="nav-wallet">👛 ZARD Wallet</a>
-                        <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank" class="eco-link-btn" data-i18n="nav-eco">🚀 Ecosistema Global</a>
+                        <a href="https://figueredo56.github.io/DAIoficial/" target="_blank" class="eco-link-btn" data-i18n="nav-eco">🚀 Ecosistema Global</a>
                     </div>
                 </div>
             </section>
@@ -168,6 +166,9 @@
     </div>
 
     <script>
+        // Dirección oficial actualizada del contrato ZARD para PancakeSwap y creación de pares
+        const ZARD_TOKEN_ADDRESS = "0x472d59538effe1c85382e3e62e1b2ec995d382ef";
+
         const translations = {
             es: {
                 "nav-web": "🌐 Web Oficial", "nav-wallet": "👛 ZARD Wallet", "nav-eco": "🚀 Ecosistema Global",
