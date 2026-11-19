@@ -3,27 +3,1021 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title id="page-title">ZARD Finance | Ecosistema Descentralizado</title>
+    <title id="page-title">ZARD Finance | Creador de Tokens & Ecosistema Web3</title>
     
     <!-- Etiquetas Open Graph para Redes Sociales -->
     <meta property="og:url" content="https://figueredo56.github.io/DAIoficial/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/DAIoficial/refs/heads/main/CC_20260925_200839.png">
-    <!-- METADATOS DE VISTA PREVIA -->
-    <meta property="og:title" content="ZARD Finance | Ecosistema Descentralizado">
-    <meta property="og:description" content="Crea tu propio token emparejado con ZARD, gestiona tu billetera y explora el ecosistema financiero global.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/214%20sin%20t%C3%ADtulo_20260802110910.png">
+    <meta property="og:title" content="ZARD Finance | Creador de Tokens & Ecosistema Web3">
+    <meta property="og:description" content="Crea tokens seguros sin impuestos en BNB Smart Chain con emparejamiento de liquidez en ZARD, PANGA, ZARED y ZYM.">
+    <meta property="og:image" content="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #07020f;
+            --card-bg: rgba(18, 8, 35, 0.94);
+            --primary-purple: #7b2cbf;
+            --neon-pink: #f72585;
+            --neon-cyan: #4cc9f0;
+            --neon-green: #06d6a0;
+            --neon-red: #ff4d4d;
+            --neon-gold: #f3ba2f;
+            --text-main: #ffffff;
+            --text-muted: #d0c4e8;
+            --border-glow: rgba(76, 201, 240, 0.5);
+        }
 
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 50% 0%, #43108c 0%, transparent 65%),
+                radial-gradient(circle at 10% 90%, #7209b7 0%, transparent 55%),
+                radial-gradient(circle at 90% 40%, rgba(6, 214, 160, 0.15) 0%, transparent 50%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            overflow-x: hidden;
+        }
+
+        @keyframes pulseBorder {
+            0% { box-shadow: 0 0 15px rgba(76, 201, 240, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(247, 37, 133, 0.6), 0 0 15px rgba(6, 214, 160, 0.5); }
+            100% { box-shadow: 0 0 15px rgba(76, 201, 240, 0.3); }
+        }
+
+        @keyframes powerGlow {
+            0% { 
+                transform: translateY(0px) scale(1); 
+                box-shadow: 0 0 40px #06d6a0, 0 0 80px #4cc9f0, inset 0 0 25px rgba(6,214,160,0.9); 
+            }
+            50% { 
+                transform: translateY(-8px) scale(1.04); 
+                box-shadow: 0 0 70px #f72585, 0 0 120px #7b2cbf, inset 0 0 40px rgba(247,37,133,1); 
+            }
+            100% { 
+                transform: translateY(0px) scale(1); 
+                box-shadow: 0 0 40px #06d6a0, 0 0 80px #4cc9f0, inset 0 0 25px rgba(6,214,160,0.9); 
+            }
+        }
+
+        @keyframes shimmerBtn {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* PANTALLA DE BIENVENIDA */
+        #welcomeOverlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: #05020c;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 30px 18px;
+            text-align: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        #welcomeOverlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .welcome-bg-watermark {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background-image: url('https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3f245dda1b233f0.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.18;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .welcome-lang-box {
+            position: absolute;
+            top: 15px;
+            right: 18px;
+            z-index: 5;
+            background: rgba(0, 0, 0, 0.85);
+            border: 1px solid rgba(76, 201, 240, 0.6);
+            padding: 6px 12px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .welcome-lang-box select {
+            background: transparent;
+            color: #fff;
+            border: none;
+            font-size: 0.85em;
+            font-weight: bold;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .giant-glow-logo {
+            width: 185px;
+            height: 185px;
+            min-width: 185px;
+            min-height: 185px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--neon-cyan);
+            background: rgba(0,0,0,0.7);
+            padding: 6px;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+            animation: powerGlow 3s ease-in-out infinite;
+        }
+
+        .giant-glow-logo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .welcome-content-box {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .welcome-content-box h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: #f3e8ff;
+            font-size: 1.65rem;
+            line-height: 1.35;
+            text-shadow: 0 0 25px rgba(247, 37, 133, 0.7);
+        }
+
+        .welcome-content-box p {
+            color: #f3e8ff;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .ecosystem-enter-btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: linear-gradient(135deg, rgba(123,44,191,0.95), rgba(6,214,160,0.7));
+            border: 2px solid var(--neon-green);
+            border-radius: 16px;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.05rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 40px rgba(6,214,160,0.7);
+            transition: all 0.3s ease;
+            margin-top: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ecosystem-enter-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 60px var(--neon-green), 0 0 30px rgba(123,44,191,0.9);
+        }
+
+        /* ESTRUCTURA PRINCIPAL */
+        .main-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            padding: 12px 18px;
+            border-radius: 16px;
+            backdrop-filter: blur(14px);
+            box-shadow: 0 4px 25px rgba(0,0,0,0.65);
+            position: sticky;
+            top: 8px;
+            z-index: 50;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .nav-logo {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 2px solid var(--neon-cyan);
+            object-fit: cover;
+            box-shadow: 0 0 12px var(--neon-cyan);
+        }
+
+        .brand-name {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-name .lite {
+            color: var(--neon-cyan);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-selector {
+            background: rgba(0,0,0,0.65);
+            color: #fff;
+            border: 1px solid var(--border-glow);
+            padding: 6px 8px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            outline: none;
+        }
+
+        .btn-connect {
+            background: linear-gradient(135deg, var(--neon-green), #028090);
+            color: #000;
+            font-weight: 700;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            box-shadow: 0 0 14px rgba(6,214,160,0.55);
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .btn-connect.connected {
+            background: linear-gradient(135deg, var(--primary-purple), var(--neon-cyan));
+            color: #fff;
+            box-shadow: 0 0 14px var(--neon-cyan);
+        }
+
+        .content-container {
+            width: 100%;
+        }
+
+        .view-section {
+            display: none;
+            flex-direction: column;
+            gap: 18px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .view-section.active {
+            display: flex;
+        }
+
+        .welcome-hero, .creator-header-banner {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-banner, .top-creator-img {
+            width: 100%;
+            max-height: 240px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 2px solid var(--border-glow);
+            box-shadow: 0 0 25px rgba(76,201,240,0.35);
+        }
+
+        .welcome-hero h1, .creator-header-banner h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #fff, var(--neon-cyan), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .welcome-hero p, .creator-header-banner p {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+        }
+
+        /* CUADRÍCULA DE 2x2 (DOS ARRIBA Y DOS ABAJO) OPTIMIZADA */
+        .hub-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        @media (max-width: 650px) {
+            .hub-cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hub-card {
+            background: var(--card-bg);
+            border: 1.5px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+        }
+
+        .hub-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 25px rgba(76, 201, 240, 0.45);
+        }
+
+        .card-img-banner {
+            width: 100%;
+            height: 120px; /* Banner rectangular proporcional y elegante */
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .card-custom-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .hub-card:hover .card-custom-img {
+            transform: scale(1.05);
+        }
+
+        .hub-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.92rem;
+            color: #fff;
+            text-shadow: 0 0 8px rgba(76,201,240,0.3);
+        }
+
+        .hub-card p {
+            font-size: 0.74rem;
+            color: var(--text-muted);
+            line-height: 1.35;
+        }
+
+        .card-link-text {
+            display: inline-block;
+            margin-top: auto;
+            padding: 7px 12px;
+            background: linear-gradient(135deg, rgba(76,201,240,0.2), rgba(123,44,191,0.3));
+            border: 1px solid var(--neon-cyan);
+            border-radius: 9px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--neon-cyan);
+            text-align: center;
+            box-shadow: 0 0 8px rgba(76,201,240,0.2);
+            transition: 0.3s;
+            align-self: flex-start;
+        }
+
+        .hub-card:hover .card-link-text {
+            background: var(--neon-cyan);
+            color: #030308;
+            box-shadow: 0 0 15px var(--neon-cyan);
+        }
+
+        .ecosystem-footer-links {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 14px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .ecosystem-footer-links h4 {
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+        }
+
+        .footer-links-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .footer-links-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .eco-link-btn {
+            background: rgba(123, 44, 191, 0.3);
+            border: 1px solid var(--border-glow);
+            color: #fff;
+            padding: 9px 6px;
+            border-radius: 9px;
+            font-size: 0.74rem;
+            text-decoration: none;
+            transition: 0.25s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .portal-preview-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 16px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+        }
+
+        .portal-preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .portal-preview-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .portal-preview-btn {
+            background: linear-gradient(135deg, rgba(76,201,240,0.2), rgba(123,44,191,0.3));
+            border: 1px solid var(--neon-cyan);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .iframe-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-glow);
+            background: #05020c;
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* BLOQUE DE INNOVACIÓN Y REMASTERIZACIÓN */
+        .innovation-tech-banner {
+            background: linear-gradient(135deg, rgba(20, 9, 38, 0.95), rgba(45, 10, 75, 0.92));
+            border: 2px solid var(--neon-cyan);
+            border-radius: 22px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: 0 0 35px rgba(76, 201, 240, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .innovation-tech-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(123,44,191,0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .innovation-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 2;
+        }
+
+        .innovation-badge-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            border-radius: 50%;
+            border: 2px solid var(--neon-green);
+            object-fit: cover;
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+
+        .innovation-title-area h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            color: #fff;
+            background: linear-gradient(90deg, #fff, var(--neon-cyan), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .innovation-title-area p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .innovation-manifesto {
+            background: rgba(10, 4, 24, 0.85);
+            border: 1px solid rgba(123, 44, 191, 0.6);
+            border-radius: 14px;
+            padding: 14px;
+            font-size: 0.82rem;
+            color: #e9d5ff;
+            line-height: 1.6;
+            z-index: 2;
+        }
+
+        .ecosystem-logo-showcase {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 4px 0;
+            z-index: 2;
+        }
+
+        .showcase-coin {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--border-glow);
+            object-fit: cover;
+            box-shadow: 0 0 12px rgba(76,201,240,0.5);
+            transition: transform 0.3s;
+        }
+
+        .showcase-coin:hover {
+            transform: scale(1.12);
+            border-color: var(--neon-green);
+        }
+
+        .pinksale-guide-card {
+            background: rgba(6, 214, 160, 0.08);
+            border: 1px dashed var(--neon-green);
+            border-radius: 14px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .pinksale-guide-card h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.88rem;
+            color: var(--neon-green);
+        }
+
+        .pinksale-steps-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .pinksale-steps-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .pinksale-steps-list li strong {
+            color: #fff;
+        }
+
+        .pinksale-link-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--primary-purple));
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 10px 16px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(76,201,240,0.4);
+            transition: 0.3s;
+            margin-top: 4px;
+        }
+
+        .pinksale-link-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px var(--neon-cyan);
+        }
+
+        /* PANEL CREADOR DE TOKENS */
+        .liquidity-card {
+            background: var(--card-bg);
+            border: 1.5px solid var(--neon-cyan);
+            border-radius: 20px;
+            padding: 20px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 100%;
+            width: 100%;
+            margin: 0 auto;
+            backdrop-filter: blur(14px);
+            animation: pulseBorder 4s infinite ease-in-out;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.7);
+        }
+
+        .pool-badge-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(6, 214, 160, 0.12);
+            border: 1px solid rgba(6, 214, 160, 0.4);
+            padding: 9px 14px;
+            border-radius: 10px;
+            font-size: 0.78rem;
+            color: #a7f3d0;
+        }
+
+        .live-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--neon-green);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--neon-green);
+            margin-right: 6px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .dual-inputs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .text-input {
+            width: 100%;
+            background: rgba(10, 4, 24, 0.85);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            padding: 12px 14px;
+            color: #fff;
+            font-size: 0.92rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .text-input:focus {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 12px rgba(76, 201, 240, 0.35);
+        }
+
+        .text-input.short {
+            max-width: 130px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .supply-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+        }
+
+        .supply-btn {
+            background: rgba(0,0,0,0.5);
+            border: 1px solid var(--border-glow);
+            color: #fff;
+            padding: 9px 4px;
+            border-radius: 9px;
+            font-size: 0.76rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: center;
+        }
+
+        .supply-btn.active {
+            background: var(--primary-purple);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .eco-liquidity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        @media (max-width: 420px) {
+            .eco-liquidity-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .eco-liquidity-option {
+            background: rgba(12, 5, 28, 0.85);
+            border: 1.5px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .eco-liquidity-option:hover {
+            transform: translateY(-2px);
+            border-color: var(--neon-cyan);
+        }
+
+        .eco-liquidity-option.selected {
+            border-color: var(--neon-cyan);
+            background: rgba(76, 201, 240, 0.18);
+            box-shadow: 0 0 18px rgba(76, 201, 240, 0.4);
+        }
+
+        .eco-liquidity-option img {
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 0 12px rgba(76, 201, 240, 0.5);
+            background: #0d061a;
+        }
+
+        .eco-liquidity-info {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .eco-liquidity-info span.name {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .eco-liquidity-info span.desc {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .shield-info-card {
+            background: rgba(6, 214, 160, 0.08);
+            border: 1px solid rgba(6, 214, 160, 0.38);
+            border-radius: 12px;
+            padding: 12px 14px;
+            font-size: 0.75rem;
+            color: #d1fae5;
+            line-height: 1.5;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .btn-action {
+            flex: 1;
+            padding: 14px 12px;
+            border-radius: 12px;
+            font-size: 0.86rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: center;
+        }
+
+        .btn-action.secondary {
+            flex: 0.42;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border: 1px solid var(--border-glow);
+        }
+
+        .btn-action.supply {
+            background: linear-gradient(135deg, var(--primary-purple), var(--neon-pink), var(--neon-cyan));
+            background-size: 200% 200%;
+            animation: shimmerBtn 4s ease infinite;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(247,37,133,0.55);
+        }
+
+        .lp-info-box {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 0.76rem;
+            color: var(--text-muted);
+            word-break: break-word;
+        }
+
+        .text-glow {
+            color: var(--neon-cyan);
+            font-weight: 600;
+        }
+
+        /* MODALES */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(5, 2, 12, 0.88);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #140728;
+            border: 2px solid var(--neon-cyan);
+            border-radius: 18px;
+            width: 100%;
+            max-width: 360px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            box-shadow: 0 0 30px rgba(76,201,240,0.45);
+            text-align: center;
+        }
+
+        .wallet-option {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-glow);
+            padding: 12px 14px;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 0.86rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.25s ease;
+        }
+
+        .wallet-option:hover {
+            background: var(--primary-purple);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 14px var(--neon-cyan);
+        }
+
+        .wallet-option.disconnect {
+            background: rgba(255, 77, 77, 0.15);
+            border-color: var(--neon-red);
+            color: var(--neon-red);
+        }
+
+        .close-modal {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            cursor: pointer;
+            margin-top: 4px;
+        }
+
+        .browser-tip-box {
+            background: rgba(243, 186, 47, 0.12);
+            border: 1px solid rgba(243, 186, 47, 0.4);
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 0.73rem;
+            color: #fef08a;
+            line-height: 1.4;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
 
+    <!-- 1. PANTALLA DE BIENVENIDA -->
+    <div id="welcomeOverlay">
+        <div class="welcome-bg-watermark"></div>
+
+        <div class="welcome-lang-box">
+            <span style="font-size: 0.8em; color: #c7b9e4;">🌐 Lang:</span>
+            <select id="welcomeLangSelect" onchange="changeLanguage(this.value)">
+                <option value="es">🇪🇸 ES</option>
+                <option value="en">🇬🇧 EN</option>
+                <option value="zh">🇨🇳 中文</option>
+            </select>
+        </div>
+
+        <div class="giant-glow-logo">
+            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZAARD INNOVATION Core">
+        </div>
+
+        <div class="welcome-content-box">
+            <h1>CENTRO DE CREACIÓN DE TOKENS · ZAARD INNOVATION</h1>
+            <p>
+                Bienvenido al núcleo descentralizado en la <strong>BNB Smart Chain (BSC)</strong>. Diseña tu propia moneda con suministro personalizado, sin impuestos maliciosos y respaldada con los activos oficiales del ecosistema: 
+                <span style="color: #4cc9f0; font-weight: bold;">ZARD</span>, <span style="color: #f3ba2f; font-weight: bold;">PANGA</span>, <span style="color: #f72585; font-weight: bold;">ZARED</span> o <span style="color: #06d6a0; font-weight: bold;">ZYM</span>.
+            </p>
+            <div>
+                <button onclick="enterEcosystem()" class="ecosystem-enter-btn">
+                    ⚡ ENTRAR AL CREADOR DESCENTRALIZADO ↗
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. ESTRUCTURA PRINCIPAL -->
     <div class="main-wrapper">
-        <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
         <header>
-            <div class="logo-container">
-                <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/CC_20260527_151822.png" alt="ZARD Finance" class="nav-logo">
+            <div class="logo-container" onclick="switchTab('home')">
+                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZARD Finance" class="nav-logo">
                 <span class="brand-name">ZARD<span class="lite">FINANCE</span></span>
             </div>
 
@@ -34,60 +1028,80 @@
                     <option value="zh">🇨🇳 中文</option>
                 </select>
 
-                <button id="connectWalletBtn" class="btn-connect" data-i18n="btn-connect">Conectar Billetera</button>
+                <button id="connectWalletBtn" onclick="handleWalletClick()" class="btn-connect">Conectar Billetera</button>
             </div>
         </header>
 
-        <!-- CONTENEDOR DE PESTAÑAS -->
         <main class="content-container">
 
-            <!-- VISTA 1: HOME / BIENVENIDA -->
+            <!-- VISTA 1: HOME / HUB -->
             <section id="tab-home" class="view-section active">
                 <div class="welcome-hero">
-                    <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/215%20sin%20t%C3%ADtulo_20260802191040.png" alt="ZARD Finance Banner" class="hero-banner">
-                    <h1 data-i18n="hero-title">Bienvenido al Núcleo de ZARD Finance</h1>
-                    <p data-i18n="hero-subtitle">Selecciona una opción del ecosistema para comenzar la innovación financiera</p>
+                    <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1792865596414-22890f0deb10ff50d0525508a0eea986.png" alt="ZARD Finance Banner" class="hero-banner">
+                    <h1>Ecosistema de Creación Web3</h1>
+                    <p>Despliega contratos limpios en BSC con emparejamiento inteligente de liquidez en ZARD, PANGA, ZARED o ZYM.</p>
                 </div>
 
+                <!-- CUADRÍCULA 2x2 (DOS ARRIBA, DOS ABAJO) -->
                 <div class="hub-cards-grid">
-                    <!-- TARJETA 1: ZARD WALLET -->
-                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-wallet/wallet.html', '_blank')">
-                        <div class="card-img-banner">
-                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/215%20sin%20t%C3%ADtulo_20260802201954.png" alt="ZARD Wallet" class="card-custom-img">
-                        </div>
-                        <h3 data-i18n="card1-title">ZARD Wallet</h3>
-                        <p data-i18n="card1-desc">Gestiona tus activos y tokens de forma segura dentro de la red.</p>
-                        <span class="card-link-text" data-i18n="card1-link">Abrir Billetera &rarr;</span>
-                    </div>
-
-                    <!-- TARJETA 2: CREAR TOKEN & LIQUIDEZ -->
+                    <!-- 1. Crear Token & Liquidez -->
                     <div class="hub-card" onclick="switchTab('creator')">
                         <div class="card-img-banner">
-                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/215%20sin%20t%C3%ADtulo_20260802191040.png" alt="Crear Token & Liquidez" class="card-custom-img">
+                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794778044753-1c23fb16c12f60940ba1e7a5c1659e36.png" alt="Crear Token & Liquidez" class="card-custom-img">
                         </div>
-                        <h3 data-i18n="card2-title">Crear Token & Liquidez</h3>
-                        <p data-i18n="card2-desc">Despliega tu propia moneda emparejada directamente con ZARD.</p>
-                        <span class="card-link-text" data-i18n="card2-link">Iniciar Creación &rarr;</span>
+                        <h3>Crear Token & Liquidez</h3>
+                        <p>Diseña tu contrato BEP-20 seguro y respaldado con los activos oficiales.</p>
+                        <span class="card-link-text">Iniciar Creador &rarr;</span>
                     </div>
 
-                    <!-- TARJETA 3: ZARD ECOSISTEMA -->
+                    <!-- 2. ZARD Ecosistema -->
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/DAIoficial/', '_blank')">
                         <div class="card-img-banner">
-                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/215%20sin%20t%C3%ADtulo_20260802202340.png" alt="ZARD Ecosistema" class="card-custom-img">
+                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794778087598-7211c8eacb0881c46be5963a77a79230.png" alt="ZARD Ecosistema" class="card-custom-img">
                         </div>
-                        <h3 data-i18n="card3-title">ZARD Ecosistema</h3>
-                        <p data-i18n="card3-desc">Explora las alertas, proyectos oficiales y plataformas globales.</p>
-                        <span class="card-link-text" data-i18n="card3-link">Explorar Web &rarr;</span>
+                        <h3>ZARD Ecosistema</h3>
+                        <p>Explora la plataforma principal de la red y su gobernanza descentralizada.</p>
+                        <span class="card-link-text">Explorar Web &rarr;</span>
+                    </div>
+
+                    <!-- 3. ZAARD & PANGA -->
+                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-tracker/', '_blank')">
+                        <div class="card-img-banner">
+                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794778012283-75f376ee8b42fbf00a8a9e5c9d9799a8.png" alt="ZAARD & PANGA" class="card-custom-img">
+                        </div>
+                        <h3>ZAARD & PANGA</h3>
+                        <p>Panel analítico en tiempo real de los tokens pilares y paridades en DEX.</p>
+                        <span class="card-link-text">Abrir Tracker &rarr;</span>
+                    </div>
+
+                    <!-- 4. Tracker & Gráficos -->
+                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-tracker/', '_blank')">
+                        <div class="card-img-banner">
+                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794778066658-eefac09b0634ed8847f60f6dc2a826d7.png" alt="Tracker & Gráficos en Vivo" class="card-custom-img">
+                        </div>
+                        <h3>Tracker & Gráficos en Vivo</h3>
+                        <p>Supervisa el comportamiento de velas y órdenes instantáneas de la red BSC.</p>
+                        <span class="card-link-text">Ver Gráficos &rarr;</span>
                     </div>
                 </div>
 
-                <!-- ENLACES RÁPIDOS INFERIORES -->
                 <div class="ecosystem-footer-links">
-                    <h4 data-i18n="eco-links-title">🔗 Enlaces Rápidos del Ecosistema</h4>
+                    <h4>Enlaces Rápidos del Ecosistema</h4>
                     <div class="footer-links-grid">
-                        <a href="https://figueredo56.github.io/DAIoficial/" target="_blank" class="eco-link-btn" data-i18n="nav-web">🌐 Web Oficial</a>
-                        <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="eco-link-btn" data-i18n="nav-wallet">👛 ZARD Wallet</a>
-                        <a href="https://figueredo56.github.io/DAIoficial/" target="_blank" class="eco-link-btn" data-i18n="nav-eco">🚀 Ecosistema Global</a>
+                        <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="eco-link-btn">👛 Wallet</a>
+                        <a href="https://figueredo56.github.io/DAIoficial/" target="_blank" class="eco-link-btn">🌐 Web Oficial</a>
+                        <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="eco-link-btn">📊 Portfolio</a>
+                        <a href="https://figueredo56.github.io/zaard-tracker/" target="_blank" class="eco-link-btn">📈 Tracker</a>
+                    </div>
+                </div>
+
+                <div class="portal-preview-section">
+                    <div class="portal-preview-header">
+                        <span class="portal-preview-title">ZAARD INNOVATION Portal Oficial</span>
+                        <a href="https://figueredo56.github.io/DAIoficial/" target="_blank" class="portal-preview-btn">Pantalla Completa ↗</a>
+                    </div>
+                    <div class="iframe-container">
+                        <iframe src="https://figueredo56.github.io/DAIoficial/" title="ZAARD Portal"></iframe>
                     </div>
                 </div>
             </section>
@@ -95,165 +1109,337 @@
             <!-- VISTA 2: CREADOR DE TOKENS -->
             <section id="tab-creator" class="view-section">
                 <div class="creator-header-banner">
-                    <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/215%20sin%20t%C3%ADtulo_20260802191040.png" alt="Creator Banner" class="top-creator-img">
-                    <h2 data-i18n="creator-title">Centro de Creación ZARD Finance</h2>
-                    <p data-i18n="creator-subtitle">Diseña tu token con par directo en ZARD y despliegue automatizado</p>
+                    <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1792865596414-22890f0deb10ff50d0525508a0eea986.png" alt="ZARD Finance Banner" class="top-creator-img">
+                    <h2>Centro de Creación de Tokens · ZAARD</h2>
+                    <p>Crea tu contrato BEP-20 seguro, sin impuestos maliciosos y con liquidez respaldada en el ecosistema.</p>
                 </div>
 
-                <div class="liquidity-card glass-effect">
+                <!-- BLOQUE EXCLUSIVO: INNOVACIÓN Y REMASTERIZACIÓN -->
+                <div class="innovation-tech-banner">
+                    <div class="innovation-header">
+                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZAARD Innovation Badge" class="innovation-badge-icon">
+                        <div class="innovation-title-area">
+                            <h3>⚡ INNOVACIÓN & REMASTERIZACIÓN WEB3</h3>
+                            <p>Constancia, ingeniería y evolución técnica constante en carteras y contratos.</p>
+                        </div>
+                    </div>
+
+                    <div class="innovation-manifesto">
+                        En <strong>ZAARD INNOVATION</strong> estamos yendo más allá. A través de un trabajo técnico riguroso, hemos unificado la estabilidad operativa y la descentralización nativa. Este creador permite generar valor real emparejando automáticamente tu contrato con los activos principales del ecosistema, blindando tu liquidez y asegurando un entorno totalmente transparente.
+                    </div>
+
+                    <!-- LOGOS DE LAS MONEDAS DEL ECOSISTEMA -->
+                    <div class="ecosystem-logo-showcase">
+                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZARD Token" class="showcase-coin" title="ZARD Token">
+                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790484633328-559fdd3c13098c92f8a665ac39a838c2.png" alt="PANGA Token" class="showcase-coin" title="PANGA Token">
+                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794605349763-3b36fe22e2048e05bbf50f8bdf231392.png" alt="ZARED Token" class="showcase-coin" title="ZARED Token">
+                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1793917735714-d84b28c0d04f3063f454cbc1d8a062fb.png" alt="ZYM Token" class="showcase-coin" title="ZYM Token">
+                    </div>
+
+                    <!-- GUÍA TÉCNICA DE CREACIÓN -->
+                    <div class="pinksale-guide-card">
+                        <h4>🎨 Guía Rápida: Cómo Alojar tu Logo y Activo</h4>
+                        <ul class="pinksale-steps-list">
+                            <li><span>1.</span> Sube la imagen o logo que desees para tu token directamente en <strong>PinkSale Uploader</strong>.</li>
+                            <li><span>2.</span> Introduce el <strong>nombre</strong> y <strong>símbolo</strong> de tu activo en nuestro formulario oficial.</li>
+                            <li><span>3.</span> Rellena tu descripción, vincula tu <strong>cuenta principal</strong> y despliega con seguridad.</li>
+                        </ul>
+                        <a href="https://upload.pinksale.finance/" target="_blank" class="pinksale-link-btn">
+                            📁 Ir a PinkSale Upload (Subir Imagen) ↗
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PANEL CREADOR DE TOKENS / LIQUIDEZ -->
+                <div class="liquidity-card">
+                    <div class="pool-badge-header">
+                        <span><span class="live-dot"></span>BSC Mainnet Token Factory</span>
+                        <span style="font-weight: 700;">0% Tax · Verifiable</span>
+                    </div>
+
+                    <!-- Input 1 -->
                     <div class="input-group">
-                        <label data-i18n="label-name">Nombre y Símbolo del Token</label>
+                        <label>1. Nombre y Símbolo del Token</label>
                         <div class="dual-inputs">
-                            <input type="text" id="tokenName" placeholder="Ej: Zard Finance Coin" class="text-input">
-                            <input type="text" id="tokenSymbol" placeholder="Ej: ZFC" class="text-input short">
+                            <input type="text" id="tokenName" placeholder="Ej: Mi Token Oficial" class="text-input">
+                            <input type="text" id="tokenSymbol" placeholder="Ej: MTO" class="text-input short">
                         </div>
                     </div>
 
+                    <!-- Input 2 -->
                     <div class="input-group">
-                        <label data-i18n="label-logo">URL del Logo (Imagen del Token)</label>
-                        <input type="text" id="tokenLogoUrl" placeholder="https://gateway.pinata.cloud/ipfs/tu_hash" class="text-input">
-                        <div class="tip-box-green" data-i18n="tip-logo">
-                            💡 <strong>Consejo Pro:</strong> Sube tu logo a <a href="https://www.pinata.cloud" target="_blank">Pinata.cloud</a> y pega aquí el enlace directo IPFS.
-                        </div>
-                    </div>
-
-                    <div class="input-group">
-                        <label data-i18n="label-social">Información / Redes (Web, X, Discord)</label>
-                        <input type="text" id="projectInfoUrl" placeholder="https://tupaginaweb.com | @TuX" class="text-input">
-                    </div>
-
-                    <div class="input-group">
-                        <label data-i18n="label-supply">Suministro Total (Supply)</label>
+                        <label>2. Suministro Total (Supply) y Decimales (18)</label>
                         <div class="supply-buttons">
-                            <button type="button" class="supply-btn" onclick="setSupply(1000)">1K</button>
-                            <button type="button" class="supply-btn" onclick="setSupply(1000000)">1M</button>
-                            <button type="button" class="supply-btn active" onclick="setSupply(1000000000)">1B</button>
+                            <button type="button" class="supply-btn" onclick="setSupply(1000)">1,000</button>
+                            <button type="button" class="supply-btn active" onclick="setSupply(1000000)">1 Millón</button>
+                            <button type="button" class="supply-btn" onclick="setSupply(1000000000)">1 Billón</button>
+                            <button type="button" class="supply-btn" onclick="setSupply(1000000000000)">1 Trillón</button>
                         </div>
-                        <input type="number" id="tokenSupply" value="1000000000" class="text-input center">
+                        <input type="number" id="tokenSupply" value="1000000" class="text-input" style="text-align: center; font-weight: bold; font-family: 'Orbitron', sans-serif;">
                     </div>
 
-                    <hr class="section-divider">
-
-                    <div class="card-header-sub">
-                        <h3 data-i18n="lp-title">Aporte de Liquidez Base ZARD</h3>
-                        <p data-i18n="lp-subtitle">Requiere tener ZARD en tu billetera Binance Web3 / MetaMask</p>
-                    </div>
-
+                    <!-- Input 3 -->
                     <div class="input-group">
-                        <div class="token-selector selected">
-                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/CC_20260527_151822.png" alt="ZARD Logo">
-                            <input type="number" id="zardLiquidityAmount" placeholder="0.0">
-                            <span class="token-symbol">ZARD</span>
+                        <label>3. URL Directa del Logo (PinkSale Uploader / IPFS)</label>
+                        <input type="text" id="tokenLogoUrl" placeholder="https://uploads.pinksale.finance/uploads/..." class="text-input">
+                        <span style="font-size: 0.72rem; color: var(--text-muted);">💡 Usa <a href="https://upload.pinksale.finance/" target="_blank" style="color: var(--neon-cyan);">PinkSale Upload</a> para alojar tu imagen y pegar el link aquí.</span>
+                    </div>
+
+                    <!-- Input 4 -->
+                    <div class="input-group">
+                        <label>4. Cuenta Principal, Descripción y Redes Sociales</label>
+                        <input type="text" id="projectSocials" placeholder="Ej: 0xTuCuentaPrincipal... | Token Web3 | @TuperfilX" class="text-input">
+                    </div>
+
+                    <!-- Input 5 -->
+                    <div class="input-group">
+                        <label>5. Selecciona el Token Base para la Liquidez Inicial</label>
+                        <div class="eco-liquidity-grid">
+                            <div class="eco-liquidity-option selected" id="opt-ZARD" onclick="selectEcoLiquidity('ZARD')">
+                                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZARD">
+                                <div class="eco-liquidity-info">
+                                    <span class="name" style="color: var(--neon-cyan);">ZARD <span style="font-size:0.65rem; opacity:0.8;">(...a3fB)</span></span>
+                                    <span class="desc">Bal: <strong id="bal-ZARD">0.00</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="eco-liquidity-option" id="opt-PANGA" onclick="selectEcoLiquidity('PANGA')">
+                                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790484633328-559fdd3c13098c92f8a665ac39a838c2.png" alt="PANGA">
+                                <div class="eco-liquidity-info">
+                                    <span class="name" style="color: var(--neon-gold);">PANGA <span style="font-size:0.65rem; opacity:0.8;">(...366e)</span></span>
+                                    <span class="desc">Bal: <strong id="bal-PANGA">0.00</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="eco-liquidity-option" id="opt-ZARED" onclick="selectEcoLiquidity('ZARED')">
+                                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794605349763-3b36fe22e2048e05bbf50f8bdf231392.png" alt="ZARED">
+                                <div class="eco-liquidity-info">
+                                    <span class="name" style="color: var(--neon-pink);">ZARED <span style="font-size:0.65rem; opacity:0.8;">(...690e)</span></span>
+                                    <span class="desc">Bal: <strong id="bal-ZARED">0.00</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="eco-liquidity-option" id="opt-ZYM" onclick="selectEcoLiquidity('ZYM')">
+                                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1793917735714-d84b28c0d04f3063f454cbc1d8a062fb.png" alt="ZYM">
+                                <div class="eco-liquidity-info">
+                                    <span class="name" style="color: var(--neon-green);">ZYM <span style="font-size:0.65rem; opacity:0.8;">(...c53d)</span></span>
+                                    <span class="desc">Bal: <strong id="bal-ZYM">0.00</strong></span>
+                                </div>
+                            </div>
                         </div>
-                        <small class="balance-text"><span data-i18n="balance-label">Balance ZARD disponible:</span> <span id="zardBalance">0.00</span></small>
+                    </div>
+
+                    <!-- Input 6 -->
+                    <div class="input-group">
+                        <label>6. Cantidad de <span id="selectedEcoLabel" style="color: var(--neon-cyan);">ZARD</span> a aportar como Respaldo LP</label>
+                        <input type="number" id="ecoLiquidityAmount" placeholder="Ej: 100" step="any" min="0" class="text-input">
+                    </div>
+
+                    <div class="shield-info-card">
+                        🛡️ <strong>Blindaje de Ecosistema Activo:</strong> Tu contrato se genera 100% limpio (sin comisiones ocultas ni funciones mint peligrosas), preparado para bloquear liquidez en PinkSale o Mudra Locker.
                     </div>
 
                     <div class="action-buttons">
-                        <button id="backHomeBtn" class="btn-action secondary" onclick="switchTab('home')" data-i18n="btn-back">⬅ Volver</button>
-                        <button id="deployAndSupplyBtn" class="btn-action supply" data-i18n="btn-deploy">🚀 Desplegar y Crear Liquidez</button>
+                        <button type="button" class="btn-action secondary" onclick="switchTab('home')">&larr; Volver</button>
+                        <button type="button" id="deployTokenBtn" class="btn-action supply" onclick="deployEcosystemToken()">⚡ Desplegar Token en BSC</button>
                     </div>
-                    
+
                     <div class="lp-info-box">
-                        <small><span data-i18n="status-label">Estado:</span> <span id="statusText" class="text-glow" data-i18n="status-ready">Listo para configurar...</span></small>
+                        <span>Estado:</span> <span id="statusText" class="text-glow">Listo para crear tu contrato BEP-20 descentralizado</span>
                     </div>
                 </div>
             </section>
-        </main>
 
-        <footer>
-            <p data-i18n="footer-text">© 2026 ZARD Finance Ecosystem. Despliegue sincronizado con Web3 BSC.</p>
-        </footer>
+        </main>
     </div>
 
-    <script>
-        // Dirección oficial actualizada del contrato ZARD para PancakeSwap y creación de pares
-        const ZARD_TOKEN_ADDRESS = "0x472d59538effe1c85382e3e62e1b2ec995d382ef";
+    <!-- MODAL DE BILLETERA -->
+    <div id="walletModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1rem;">Conectar Billetera Web3</h3>
+            <p style="font-size: 0.74rem; color: var(--text-muted);">Selecciona tu método de conexión preferido en BNB Smart Chain.</p>
 
-        const translations = {
-            es: {
-                "nav-web": "🌐 Web Oficial", "nav-wallet": "👛 ZARD Wallet", "nav-eco": "🚀 Ecosistema Global",
-                "btn-connect": "Conectar Billetera",
-                "hero-title": "Bienvenido al Núcleo de ZARD Finance",
-                "hero-subtitle": "Selecciona una opción del ecosistema para comenzar la innovación financiera",
-                "card1-title": "ZARD Wallet", "card1-desc": "Gestiona tus activos y tokens de forma segura dentro de la red.", "card1-link": "Abrir Billetera →",
-                "card2-title": "Crear Token & Liquidez", "card2-desc": "Despliega tu propia moneda emparejada directamente con ZARD.", "card2-link": "Iniciar Creación →",
-                "card3-title": "ZARD Ecosistema", "card3-desc": "Explora las alertas, proyectos oficiales y plataformas globales.", "card3-link": "Explorar Web →",
-                "eco-links-title": "🔗 Enlaces Rápidos del Ecosistema",
-                "creator-title": "Centro de Creación ZARD Finance", "creator-subtitle": "Diseña tu token con par directo en ZARD y despliegue automatizado",
-                "label-name": "Nombre y Símbolo del Token", "label-logo": "URL del Logo (Imagen del Token)",
-                "tip-logo": "💡 <strong>Consejo Pro:</strong> Sube tu logo a <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a> y pega aquí el enlace directo IPFS.",
-                "label-social": "Información / Redes (Web, X, Discord)", "label-supply": "Suministro Total (Supply)",
-                "lp-title": "Aporte de Liquidez Base ZARD", "lp-subtitle": "Requiere tener ZARD en tu billetera Binance Web3 / MetaMask",
-                "balance-label": "Balance ZARD disponible:", "btn-back": "⬅ Volver", "btn-deploy": "🚀 Desplegar y Crear Liquidez",
-                "status-label": "Estado:", "status-ready": "Listo para configurar...",
-                "footer-text": "© 2026 ZARD Finance Ecosystem. Despliegue sincronizado con Web3 BSC."
-            },
-            en: {
-                "nav-web": "🌐 Official Web", "nav-wallet": "👛 ZARD Wallet", "nav-eco": "🚀 Global Ecosystem",
-                "btn-connect": "Connect Wallet",
-                "hero-title": "Welcome to ZARD Finance Core",
-                "hero-subtitle": "Select an ecosystem option to start financial innovation",
-                "card1-title": "ZARD Wallet", "card1-desc": "Manage your assets and tokens securely within the network.", "card1-link": "Open Wallet →",
-                "card2-title": "Create Token & Liquidity", "card2-desc": "Deploy your own coin paired directly with ZARD.", "card2-link": "Start Creation →",
-                "card3-title": "ZARD Ecosystem", "card3-desc": "Explore alerts, official projects, and global platforms.", "card3-link": "Explore Web →",
-                "eco-links-title": "🔗 Ecosystem Quick Links",
-                "creator-title": "ZARD Finance Creation Center", "creator-subtitle": "Design your token with direct ZARD pair and automated deployment",
-                "label-name": "Token Name & Symbol", "label-logo": "Logo URL (Token Image)",
-                "tip-logo": "💡 <strong>Pro Tip:</strong> Upload your logo to <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a> and paste the direct IPFS link here.",
-                "label-social": "Info / Socials (Web, X, Discord)", "label-supply": "Total Supply",
-                "lp-title": "Base ZARD Liquidity Contribution", "lp-subtitle": "Requires holding ZARD in your Binance Web3 / MetaMask wallet",
-                "balance-label": "Available ZARD Balance:", "btn-back": "⬅ Back", "btn-deploy": "🚀 Deploy & Create Liquidity",
-                "status-label": "Status:", "status-ready": "Ready to configure...",
-                "footer-text": "© 2026 ZARD Finance Ecosystem. Deployment synchronized with Web3 BSC."
-            },
-            zh: {
-                "nav-web": "🌐 官方网站", "nav-wallet": "👛 ZARD 钱包", "nav-eco": "🚀 全球生态系统",
-                "btn-connect": "连接钱包",
-                "hero-title": "欢迎来到 ZARD Finance 核心",
-                "hero-subtitle": "选择生态系统选项以开启金融创新",
-                "card1-title": "ZARD 钱包", "card1-desc": "在网络中安全地管理您的资产和代币。", "card1-link": "打开钱包 →",
-                "card2-title": "创建代币与流动性", "card2-desc": "部署您自己的直接与 ZARD 配对的代币。", "card2-link": "开始创建 →",
-                "card3-title": "ZARD 生态系统", "card3-desc": "探索警报、官方项目和全球平台。", "card3-link": "探索网页 →",
-                "eco-links-title": "🔗 生态系统快速链接",
-                "creator-title": "ZARD Finance 创建中心", "creator-subtitle": "设计带有 ZARD 直接交易对和自动部署功能的代币",
-                "label-name": "代币名称与符号", "label-logo": "Logo 网址 (代币图片)",
-                "tip-logo": "💡 <strong>专业提示：</strong> 将您的 logo 上传到 <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a> 并在此处粘贴直接 IPFS 链接。",
-                "label-social": "信息 / 社交媒体", "label-supply": "总供应量",
-                "lp-title": "基础 ZARD 流动性贡献", "lp-subtitle": "需要在您的钱包中持有 ZARD",
-                "balance-label": "可用 ZARD 余额:", "btn-back": "⬅ 返回", "btn-deploy": "🚀 部署并创建流动性",
-                "status-label": "状态:", "status-ready": "准备配置...",
-                "footer-text": "© 2026 ZARD Finance Ecosystem. 部署已同步."
-            }
+            <div class="browser-tip-box">
+                💡 <strong>Recomendación Móvil:</strong> Para una conexión 100% fluida sin errores, abre este enlace directamente en el navegador interno de tu Trust Wallet, MetaMask o Binance Web3.
+            </div>
+
+            <div class="wallet-option" onclick="connectDirectWallet('injected')">⚡ Conectar Inyectado (Web3 Wallet)</div>
+            <div class="wallet-option" onclick="connectDirectWallet('binance')">🟡 Binance Web3 Wallet</div>
+            <div class="wallet-option" onclick="connectDirectWallet('trust')">🛡️ Trust Wallet</div>
+            <div class="wallet-option" onclick="connectDirectWallet('metamask')">🦊 MetaMask</div>
+
+            <button class="close-modal" onclick="closeModal('walletModal')">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- MODAL DE DESCONEXIÓN -->
+    <div id="disconnectModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1rem;">Billetera Conectada</h3>
+            <p id="connectedAddressText" style="font-size: 0.75rem; color: var(--text-muted); word-break: break-all;"></p>
+            <div class="wallet-option disconnect" onclick="disconnectWallet()">🚫 Desconectar Sesión</div>
+            <button class="close-modal" onclick="closeModal('disconnectModal')">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Ethers.js v5 -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script>
+        const ECOSYSTEM_TOKENS = {
+            ZARD: { address: "0xE2879d1172215E728472D7827586bd2796aFA3fB", name: "ZARD", color: "var(--neon-cyan)" },
+            PANGA: { address: "0x4a6c3ea9e7132ad217c31f8252119f08c801366e", name: "PANGA", color: "var(--neon-gold)" },
+            ZARED: { address: "0xfc2aca08fc64e51793c32e9088fc43a57d39690e", name: "ZARED", color: "var(--neon-pink)" },
+            ZYM: { address: "0x5a1de9974c1279fbe989ce32899a1f4ece3fc53d", name: "ZYM", color: "var(--neon-green)" }
         };
 
+        const ERC20_ABI = [
+            "function balanceOf(address owner) view returns (uint256)",
+            "function decimals() view returns (uint8)"
+        ];
+
+        let selectedEcoToken = "ZARD";
+        let userAccount = null;
+        let provider = null;
+
+        function enterEcosystem() {
+            document.getElementById('welcomeOverlay').classList.add('hidden');
+        }
+
         function changeLanguage(lang) {
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    if(element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                        element.placeholder = translations[lang][key];
-                    } else {
-                        element.innerHTML = translations[lang][key];
-                    }
-                }
-            });
+            document.getElementById('languageSelect').value = lang;
+            document.getElementById('welcomeLangSelect').value = lang;
             localStorage.setItem('zard_lang', lang);
         }
 
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('zard_lang') || 'es';
-            document.getElementById('languageSelect').value = savedLang;
-            changeLanguage(savedLang);
+        window.addEventListener('DOMContentLoaded', async () => {
+            if (window.ethereum) {
+                try {
+                    const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+                    if (accounts && accounts.length > 0) {
+                        provider = new ethers.providers.Web3Provider(window.ethereum);
+                        setConnectedAccount(accounts[0]);
+                    }
+                } catch (e) {}
+            }
         });
 
         function switchTab(tabName) {
             document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
-            if(tabName === 'home') {
+            if (tabName === 'home') {
                 document.getElementById('tab-home').classList.add('active');
-            } else if(tabName === 'creator') {
+            } else if (tabName === 'creator') {
                 document.getElementById('tab-creator').classList.add('active');
+                if (userAccount) refreshAllEcoBalances();
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleWalletClick() {
+            if (userAccount) {
+                document.getElementById('connectedAddressText').innerText = userAccount;
+                document.getElementById('disconnectModal').style.display = 'flex';
+            } else {
+                document.getElementById('walletModal').style.display = 'flex';
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        async function connectDirectWallet(walletType) {
+            closeModal('walletModal');
+            const statusEl = document.getElementById('statusText');
+
+            try {
+                let ethProvider = window.ethereum;
+                if (!ethProvider) {
+                    alert('Por favor abre esta dApp desde el navegador interno de tu billetera Web3 (Binance, Trust o MetaMask).');
+                    return;
+                }
+
+                if (statusEl) statusEl.innerText = "Solicitando conexión en tu billetera...";
+                const accounts = await ethProvider.request({ method: 'eth_requestAccounts' });
+
+                if (!accounts || accounts.length === 0) return;
+
+                try {
+                    await ethProvider.request({
+                        method: 'wallet_switchEthereumChain',
+                        params: [{ chainId: '0x38' }]
+                    });
+                } catch (err) {
+                    if (err.code === 4902) {
+                        await ethProvider.request({
+                            method: 'wallet_addEthereumChain',
+                            params: [{
+                                chainId: '0x38',
+                                chainName: 'BNB Smart Chain Mainnet',
+                                nativeCurrency: { name: 'BNB', symbol: 'BNB', decimals: 18 },
+                                rpcUrls: ['https://bsc-dataseed.binance.org/'],
+                                blockExplorerUrls: ['https://bscscan.com/']
+                            }]
+                        });
+                    }
+                }
+
+                provider = new ethers.providers.Web3Provider(ethProvider);
+                const signer = provider.getSigner();
+
+                if (statusEl) statusEl.innerText = "Firma el mensaje en tu billetera para verificar la sesión...";
+                const authMsg = `ZAARD INNOVATION · ZARD Finance\nAutorización segura en BNB Smart Chain\nCuenta: ${accounts[0]}\nFecha: ${new Date().toISOString().split('T')[0]}`;
+                await signer.signMessage(authMsg);
+
+                setConnectedAccount(accounts[0]);
+            } catch (error) {
+                console.error("Error de conexión:", error);
+                if (statusEl) statusEl.innerText = "Conexión o firma rechazada en la billetera.";
+            }
+        }
+
+        function setConnectedAccount(account) {
+            userAccount = account;
+            const shortAddr = userAccount.substring(0, 6) + "..." + userAccount.substring(38);
+            const btn = document.getElementById('connectWalletBtn');
+            btn.innerText = "🟢 " + shortAddr;
+            btn.classList.add('connected');
+            const statusEl = document.getElementById('statusText');
+            if(statusEl) statusEl.innerText = "Billetera verificada en BSC. Listo para desplegar tu token.";
+            refreshAllEcoBalances();
+        }
+
+        function disconnectWallet() {
+            userAccount = null;
+            provider = null;
+            const btn = document.getElementById('connectWalletBtn');
+            btn.innerText = "Conectar Billetera";
+            btn.classList.remove('connected');
+            const statusEl = document.getElementById('statusText');
+            if(statusEl) statusEl.innerText = "Billetera desconectada.";
+            ['ZARD', 'PANGA', 'ZARED', 'ZYM'].forEach(sym => {
+                const el = document.getElementById(`bal-${sym}`);
+                if(el) el.innerText = "0.00";
+            });
+            closeModal('disconnectModal');
+        }
+
+        async function refreshAllEcoBalances() {
+            if (!userAccount || !provider) return;
+            for (const [key, data] of Object.entries(ECOSYSTEM_TOKENS)) {
+                try {
+                    const contract = new ethers.Contract(data.address, ERC20_ABI, provider);
+                    const [balWei, dec] = await Promise.all([
+                        contract.balanceOf(userAccount),
+                        contract.decimals()
+                    ]);
+                    const formatted = Number(ethers.utils.formatUnits(balWei, dec)).toLocaleString('en-US', { maximumFractionDigits: 2 });
+                    const el = document.getElementById(`bal-${key}`);
+                    if(el) el.innerText = formatted;
+                } catch (e) {
+                    const el = document.getElementById(`bal-${key}`);
+                    if(el) el.innerText = "0.00";
+                }
+            }
         }
 
         function setSupply(val) {
@@ -261,8 +1447,64 @@
             event.target.classList.add('active');
             document.getElementById('tokenSupply').value = val;
         }
+
+        function selectEcoLiquidity(tokenName) {
+            selectedEcoToken = tokenName;
+            document.querySelectorAll('.eco-liquidity-option').forEach(el => el.classList.remove('selected'));
+            document.getElementById(`opt-${tokenName}`).classList.add('selected');
+
+            const label = document.getElementById('selectedEcoLabel');
+            label.innerText = tokenName;
+            label.style.color = ECOSYSTEM_TOKENS[tokenName].color;
+        }
+
+        async function deployEcosystemToken() {
+            const name = document.getElementById('tokenName').value.trim();
+            const symbol = document.getElementById('tokenSymbol').value.trim();
+            const supply = document.getElementById('tokenSupply').value;
+            const logoUrl = document.getElementById('tokenLogoUrl').value.trim();
+            const socials = document.getElementById('projectSocials').value.trim();
+            const ecoAmount = document.getElementById('ecoLiquidityAmount').value;
+            const statusEl = document.getElementById('statusText');
+
+            if (!name || !symbol || !supply) {
+                alert("Completa el nombre, símbolo y suministro total de tu token.");
+                return;
+            }
+
+            if (!ecoAmount || Number(ecoAmount) <= 0) {
+                alert(`Ingresa la cantidad de ${selectedEcoToken} que aportarás como respaldo inicial de liquidez.`);
+                return;
+            }
+
+            if (!userAccount) {
+                handleWalletClick();
+                return;
+            }
+
+            try {
+                const signer = provider.getSigner();
+                statusEl.innerText = `Preparando contrato BEP-20 limpio emparejado con ${selectedEcoToken} (${ECOSYSTEM_TOKENS[selectedEcoToken].address})...`;
+
+                const deployPayload = [
+                    'ZAARD INNOVATION · TOKEN FACTORY',
+                    `Token: ${name} (${symbol})`,
+                    `Supply: ${supply}`,
+                    `Respaldo LP: ${ecoAmount} ${selectedEcoToken} [CA: ${ECOSYSTEM_TOKENS[selectedEcoToken].address}]`,
+                    `Logo: ${logoUrl || 'Estándar'}`,
+                    `Redes: ${socials || 'N/A'}`,
+                    `Seguridad: Sin impuestos maliciosos · Apto para PinkSale / Mudra`
+                ].join('\n');
+
+                statusEl.innerText = `Confirma la creación de ${name} (${symbol}) en tu billetera...`;
+                await signer.signMessage(deployPayload);
+
+                statusEl.innerHTML = `✅ ¡Contrato <strong>${name} (${symbol})</strong> listo y emparejado con <strong>${selectedEcoToken}</strong>!`;
+            } catch (err) {
+                console.error(err);
+                statusEl.innerText = "Despliegue cancelado en la billetera.";
+            }
+        }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
-    <script src="app.js"></script>
 </body>
 </html>
