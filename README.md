@@ -1,98 +1,85 @@
-ZAARD FINANCE 2
 <div align="center">
-  <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790817037242-10b712b064b3dca0c1a6417000db08e3.png" alt="ZAARD INNOVATION Banner Principal" width="100%" style="border-radius: 16px; border: 2px solid #4cc9f0; box-shadow: 0 0 30px rgba(76,201,240,0.5);">
+  <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790817037242-10b712b064b3dca0c1a6417000db08e3.png" alt="ZAARD FINANCE Banner Principal" width="100%" style="border-radius: 16px; border: 2px solid #4cc9f0; box-shadow: 0 0 30px rgba(76,201,240,0.5);">
   
   <br><br>
 
-  <h1>⚡ ZAARD INNOVATION | Web3 DApp, Nexus & Multi-Token Financial Core</h1>
-  <p><b>Infraestructura financiera descentralizada, analítica de mercado en tiempo real y centro de liquidez de alta precisión desplegado en BNB Smart Chain (BSC).</b></p>
+  <h1>🛡️ ZAARD FINANCE | Decentralized DeFi Hub, Liquidity & Asset Protocol</h1>
+  <p><b>Protocolo financiero descentralizado de alto rendimiento, gestión de liquidez automatizada y núcleo DeFi multi-token en BNB Smart Chain (BSC).</b></p>
 
   <p>
     <img src="https://img.shields.io/badge/NETWORK-BNB%20SMART%20CHAIN-f3ba2f?style=for-the-badge&logo=binance" alt="BSC Network">
-    <img src="https://img.shields.io/badge/TOKEN%20STANDARD-BEP--20-06d6a0?style=for-the-badge" alt="BEP-20">
+    <img src="https://img.shields.io/badge/DEFI-PROTOCOL%20V2%2FV3-06d6a0?style=for-the-badge" alt="DeFi Protocol">
     <img src="https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge" alt="MIT License">
     <img src="https://img.shields.io/badge/SECURITY-PROTOCOLO%20PANGA-purple?style=for-the-badge" alt="Security">
-    <img src="https://img.shields.io/badge/VERSION-5.5%20PRO-7b2cbf?style=for-the-badge" alt="Version">
+    <img src="https://img.shields.io/badge/AUDIT-VERIFIED%200--TAX-7b2cbf?style=for-the-badge" alt="Audit">
   </p>
 
   <br>
 
-  <!-- Botón de acceso directo al NEXUS -->
-  <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank">
-    <img src="https://img.shields.io/badge/⚡_ACCEDER_AL_NEXUS-Portal_Descentralizado_↗-00f3ff?style=for-the-badge&color=00f3ff&logoColor=black" alt="Acceder al Nexus">
+  <!-- Botón de acceso directo a ZAARD FINANCE -->
+  <a href="https://figueredo56.github.io/index.html/?img=zaard" target="_blank">
+    <img src="https://img.shields.io/badge/🚀_EXPLORAR_ZAARD_FINANCE-Plataforma_Oficial_↗-00f3ff?style=for-the-badge&color=00f3ff&logoColor=black" alt="Explorar ZAARD Finance">
   </a>
 
   <br><br>
 
-  <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1793380180073-56e6018eebe29c8824827024620514d9.png" alt="ZAARD INNOVATION Core Preview" width="85%" style="border-radius: 12px; border: 1px solid #7b2cbf; box-shadow: 0 0 20px rgba(123,44,191,0.4);">
+  <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1793380180073-56e6018eebe29c8824827024620514d9.png" alt="ZAARD FINANCE Core Preview" width="85%" style="border-radius: 12px; border: 1px solid #7b2cbf; box-shadow: 0 0 20px rgba(123,44,191,0.4);">
 </div>
 
 ---
 
-## 📖 Visión General del Ecosistema
+## 📖 Visión General de ZAARD FINANCE
 
-**ZAARD INNOVATION** es una plataforma Web3 integral diseñada para proporcionar una infraestructura financiera segura, transparente y de alto rendimiento en la red **BNB Smart Chain (BSC)**. 
-
-El ecosistema integra un agregador de liquidez, un rastreador analítico en tiempo real, un centro de creación e incubación de tokens emparejados con activos nativos, y el **ZAARD Nexus**, un portal social descentralizado con soporte para salas de voz globales, chat multi-idioma traducido automáticamente y sincronización de datos mediante Firebase.
+**ZAARD FINANCE** es el motor financiero y centro de operaciones DeFi del ecosistema **ZAARD INNOVATION**. Diseñado para ofrecer velocidad, transparencia y eficiencia de capital en la red **BNB Smart Chain (BSC)**, permite a los usuarios interactuar directamente con los pools de liquidez, ejecutar intercambios descentralizados (Swaps), verificar reservas en cadena y acceder a herramientas de incubación y emparejamiento de activos digitales sin intermediarios.
 
 ---
 
-## 🔒 Confianza, Seguridad y Permisos de la Billetera
+## 🔒 Seguridad, Auditoría y Arquitectura Non-Custodial
 
-En **ZAARD INNOVATION**, la seguridad de los fondos y la privacidad de nuestros usuarios son la máxima prioridad absoluta. **ZARD NEXUS** opera bajo estrictos estándares de transparencia criptográfica y bajo el sello de calidad del **Protocolo de Seguridad Panga**:
+Operando bajo el **Protocolo de Seguridad Panga** y la arquitectura **XENOCRYPT**, **ZAARD FINANCE** garantiza la protección absoluta de los activos de cada participante:
 
-*   **Arquitectura Non-Custodial:** La aplicación **nunca** almacena llaves privadas, frases semilla (`seed phrases`) ni contraseñas. Toda operación requiere la firma directa del usuario en su propia billetera.
-*   **Conexión Segura Multicanal:** La vinculación se realiza de forma directa mediante proveedores inyectados oficiales (`window.ethereum`) o pasarelas seguras por Deep Link cifradas compatibles con **Binance Web3 Wallet**, **Trust Wallet** y **MetaMask**.
-*   **Lectura Transparente de Balances:** Las consultas de saldo nativo (`BNB`) y de tokens del ecosistema se ejecutan mediante llamadas estándar de lectura de contratos (`eth_call` / `balanceOf`). Ninguna función de lectura compromete fondos ni requiere autorizaciones de gasto (`approve`) en bóvedas externas.
-*   **Privacidad Local:** Los perfiles, avatares y alias personalizados se almacenan de manera local en el dispositivo del usuario (`localStorage`) para evitar rastreos o exposición innecesaria de datos en servidores centralizados.
-
----
-
-## 🛠️ Especificaciones Técnicas y Contratos Inteligentes
-
-| Propiedad Técnico-Financiera | 💎 Token ZARD | 🔥 Token PANGA | 🟣 Token ZARED | 🔮 Token ZYM |
-| :--- | :--- | :--- | :--- | :--- |
-| **Rol en el Ecosistema** | Activo Núcleo de Gobernanza | Activo Dinámico de Utilidad | Activo de Expansión | Activo de Alta Liquidez |
-| **Red Blockchain** | BNB Smart Chain (BSC) | BNB Smart Chain (BSC) | BNB Smart Chain (BSC) | BNB Smart Chain (BSC) |
-| **Chain ID** | `56` (0x38) | `56` (0x38) | `56` (0x38) | `56` (0x38) |
-| **Dirección del Contrato (CA)** | `0xE2879d1172215E72...3fB` | `0x4a6c3ea9e7132ad2...366e` | `0xfc2aca08fc64e517...690e` | `0x5a1de9974c1279fb...c53d` |
-| **Estándar de Token** | BEP-20 (EVM) | BEP-20 (EVM) | BEP-20 (EVM) | BEP-20 (EVM) |
-| **Estructura Fiscal (Fees)** | 0% Compra / 0% Venta | 0% Compra / 0% Venta | 0% Compra / 0% Venta | 0% Compra / 0% Venta |
+*   **100% Non-Custodial (Sin Custodia):** Los usuarios mantienen el control total y exclusivo de sus fondos en todo momento. El protocolo jamás retiene llaves privadas ni tiene acceso administrativo sobre las billeteras conectadas.
+*   **Contratos Minimalistas Zero-Tax (0% Fees):** Todos los contratos inteligentes del núcleo están desarrollados bajo estándares limpios de OpenZeppelin, eliminando impuestos ocultos, funciones de bloqueo (`blacklist`) o modificaciones arbitrarias de comisiones.
+*   **Liquidez Bloqueada y Verificada:** Los pares principales del ecosistema cuentan con bloqueos de liquidez auditables en plataformas descentralizadas (Mudra Manager / PinkLock), asegurando estabilidad y confianza a largo plazo.
+*   **Interacción Directa On-Chain:** Todas las operaciones de lectura y enrutamiento se comunican directamente con los nodos RPC de BNB Smart Chain y los enrutadores oficiales de PancakeSwap V2/V3.
 
 ---
 
-## 🚀 Arquitectura de Funcionalidades e Innovaciones
+## 📜 Contratos Inteligentes del Núcleo Financiero (BSC)
 
-### 📊 1. Multi-Token Wallet & Consulta de Saldos On-Chain
-- **Lectura Directa de Contratos:** Consulta optimizada de balances nativos (`BNB`) y tokens BEP-20 clave del ecosistema (`ZARD`, `PANGA`, `ZARED`, `ZYM`, `BTCB`, `USDT`, `USDC`).
-- **Gestión de Sesión EVM:** Integración fluida con carteras móviles y de escritorio mediante pasarelas descentralizadas nativas.
-
-### 📈 2. Tracker de Mercados & Velas en Vivo
-- **Visor Interactivo DexScreener:** Gráficos avanzados y profundidad de mercado en modo oscuro adaptado para evitar desconexiones de sockets en móviles.
-- **Seguimiento de Pares:** Monitoreo analítico en tiempo real de pares con liquidez propia (`ZARD/BNB`, `PANGA/BNB`, `ZARED/BNB`, `ZYM/BNB`).
-- **Cotizaciones Cripto Globales:** API sincronizada con Coingecko para monitorear tendencias mundiales y el top 15 del mercado.
-
-### ⚡ 3. Centro de Creación de Tokens & Inyección de Liquidez
-- **Despliegue Asistido:** Interfaz que permite configurar parámetros de nuevos proyectos Web3 (Nombre, Símbolo, Supply, Metadatos).
-- **Emparejamiento Directo:** Módulo para establecer pares de liquidez inicial utilizando como activo base del pool a los tokens oficiales del ecosistema.
-
-### 🌐 4. ZAARD Nexus | Red Social Descentralizada
-- **Salas de Transmisión Global:** Sesiones de voz en tiempo real con sistema de solicitudes de palabra y gestión de anfitriones.
-- **Muro Comunitario Sincronizado:** Publicación global con soporte multimedia (imágenes, GIF, videos) mediante Firebase Realtime Database.
-- **Motor de Traducción Pro:** Soporte multiidioma integrado para adaptar la experiencia de la comunidad global (Español, Inglés, Árabe, Chino).
-
-### 🔄 5. Enrutamiento Instantáneo DEX
-- Enlaces inteligentes de intercambio directo en PancakeSwap V2/V3 para ejecutar transacciones sin intermediarios.
+| Activo / Token | Símbolo | Rol Financiero | Dirección de Contrato Oficial (CA) | Explorador |
+| :--- | :---: | :--- | :--- | :---: |
+| **ZARD Token** | `ZARD` | Reserva Principal & Gobernanza | `0xE2879d1172215E728472D7827586bd2796aFA3fB` | [BscScan ↗](https://bscscan.com/token/0xE2879d1172215E728472D7827586bd2796aFA3fB) |
+| **PANGA Token** | `PANGA` | Utilidad Dinámica & Emparejamiento | `0x4a6c3ea9e7132ad217c31f8252119f08c801366e` | [BscScan ↗](https://bscscan.com/token/0x4a6c3ea9e7132ad217c31f8252119f08c801366e) |
+| **ZARED Token** | `ZARED` | Expansión & Rendimiento DeFi | `0xfc2aca08fc64e51793c32e9088fc43a57d39690e` | [BscScan ↗](https://bscscan.com/token/0xfc2aca08fc64e51793c32e9088fc43a57d39690e) |
+| **ZYM Token** | `ZYM` | Liquidez Cruzada & Arbitraje | `0x5a1de9974c1279fbe989ce32899a1f4ece3fc53d` | [BscScan ↗](https://bscscan.com/token/0x5a1de9974c1279fbe989ce32899a1f4ece3fc53d) |
 
 ---
 
-## 💻 Estructura del Repositorio
+## 🚀 Módulos Principales de ZAARD FINANCE
+
+### 🔄 1. Enrutamiento Inteligente de Liquidez (DEX Swap)
+- Conexión directa con los pools de liquidez de **PancakeSwap V2/V3** para intercambios instantáneos (`BNB ⇄ ZARD`, `BNB ⇄ PANGA`, `BNB ⇄ ZARED`, `BNB ⇄ ZYM`) con mínimo deslizamiento (*slippage*).
+
+### 📊 2. Monitor de Métricas y Capitalización en Vivo
+- Seguimiento transparente de suministro circulante, quemas verificadas, profundidad de liquidez y volumen transaccional en tiempo real.
+
+### ⚡ 3. Emparejamiento e Incubación de Activos
+- Infraestructura diseñada para que nuevos proyectos Web3 puedan crear liquidez inicial emparejando sus tokens directamente contra **ZARD** o **PANGA**, fortaleciendo la economía circular del ecosistema.
+
+### 🔗 4. Interoperabilidad Total con ZARD NEXUS
+- Integración nativa con **ZARD Wallet / Nexus V5.5** y **ZAARD Tracker**, permitiendo pasar de la analítica de velas a la ejecución financiera en un solo clic desde dispositivos móviles y de escritorio.
+
+---
+
+## 💻 Estructura del Proyecto
 
 ```text
-zaard-wallet/
-├── wallet.html             # Dashboard principal unificado, modales, visor Web3 y Nexus V5.5
+zaard-innovation-dapp/
+├── index.html              # Interfaz principal de ZAARD FINANCE, paneles DeFi y conexiones
 ├── css/
-│   └── style.css           # Estilos base, variables temáticas, efectos neón y diseño responsivo
+│   └── finance-theme.css   # Arquitectura visual Cyberpunk/Neón y diseño adaptable móvil
 ├── js/
-│   └── core-engine.js      # Lógica de conexión EVM, lectura de saldos ERC-20 y sincronización
-└── assets/                 # Logos oficiales, banners y recursos gráficos de la marca
+│   ├── defi-router.js      # Enrutamiento de contratos BSC, lectura RPC y enlaces DEX
+│   └── analytics.js        # Sincronización de métricas de mercado y precios en vivo
+└── assets/                 # Identidad gráfica oficial, emblemas y banners de ZAARD
